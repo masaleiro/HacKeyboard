@@ -1,0 +1,2913 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<HeeksCAD_Document>
+    <Program machine="emc2" output_file="/tmp/test.tap" output_file_name_follows_data_file_name="1" program="# coding=UTF8&#x0A;# No troubled Microsoft Windows detected&#x0A;import sys&#x0A;sys.path.insert(0,&apos;/usr/lib/heekscnc/&apos;)&#x0A;import math&#x0A;from nc.nc import *&#x0A;import nc.emc2&#x0A;&#x0A;output(&apos;/home/masaleiro/keyboard2.tap&apos;)&#x0A;program_begin(123, &apos;Test program&apos;)&#x0A;absolute()&#x0A;metric()&#x0A;set_plane(0)&#x0A;&#x0A;comment(&apos;Feeds and Speeds set for machining Please select a material to machine&apos;)&#x0A;#(3.15 mm Carbide Slot Cutter)&#x0A;tool_defn( id=1, name=&apos;3.15 mm Carbide Slot Cutter&apos;, radius=1.575, length=15, gradient=-0.1)&#x0A;#(6 mm Carbide Slot Cutter)&#x0A;tool_defn( id=2, name=&apos;6 mm Carbide Slot Cutter&apos;, radius=3, length=63.5, gradient=-0.1)&#x0A;#(6 mm Carbide Ball End Mill)&#x0A;tool_defn( id=3, name=&apos;6 mm Carbide Ball End Mill&apos;, radius=3, length=63.5, gradient=-0.1)&#x0A;#(21 degreee Engraving Bit)&#x0A;tool_defn( id=4, name=&apos;21 degreee Engraving Bit&apos;, radius=1.5, length=63.5, gradient=0)&#x0A;#(15.98 mm Carbide Slot Cutter)&#x0A;tool_defn( id=5, name=&apos;15.98 mm Carbide Slot Cutter&apos;, radius=7.99, length=63.5, gradient=-0.1)&#x0A;workplane(1)&#x0A;comment(&apos;tool change to 3.15 mm Carbide Slot Cutter&apos;)&#x0A;tool_change( id=1)&#x0A;spindle(7000)&#x0A;feedrate_hv(840, 100)&#x0A;flush_nc()&#x0A;clearance = float(5)&#x0A;rapid_safety_space = float(5)&#x0A;start_depth = float(3)&#x0A;step_down = float(0.5)&#x0A;final_depth = float(0)&#x0A;tool_diameter = float(3.15)&#x0A;cutting_edge_angle = float(0)&#x0A;#absolute() mode&#x0A;comment(&apos;Sketch&apos;)&#x0A;rapid(z=5)&#x0A;rapid(x=8.575001333, y=17.85272412)&#x0A;rapid(z=5)&#x0A;feed(z=3)&#x0A;feed(z=2.500001736)&#x0A;feed(x=8.575001333, y=7.002724125, z=2.500001736)&#x0A;feed(x=19.42500133, y=7.002724125, z=2.500001736)&#x0A;feed(x=19.42500133, y=17.85272413, z=2.500001736)&#x0A;feed(x=8.575001333, y=17.85272413, z=2.500001736)&#x0A;feed(z=2.000001736)&#x0A;feed(x=8.575001333, y=7.002724125, z=2.000001736)&#x0A;feed(x=19.42500133, y=7.002724125, z=2.000001736)&#x0A;feed(x=19.42500133, y=17.85272413, z=2.000001736)&#x0A;feed(x=8.575001333, y=17.85272413, z=2.000001736)&#x0A;rapid(z=5)&#x0A;rapid(x=8.575001333, y=7.002724125)&#x0A;rapid(z=5)&#x0A;feed(z=3)&#x0A;feed(z=1.500001736)&#x0A;feed(x=19.42500133, y=7.002724125, z=1.500001736)&#x0A;feed(x=19.42500133, y=17.85272413, z=1.500001736)&#x0A;feed(x=8.575001333, y=17.85272413, z=1.500001736)&#x0A;feed(x=8.575001333, y=7.002724125, z=1.500001736)&#x0A;rapid(z=5)&#x0A;rapid(x=8.575001333, y=17.85272412)&#x0A;rapid(z=5)&#x0A;feed(z=3)&#x0A;feed(z=1.000001736)&#x0A;feed(x=8.575001333, y=7.002724125, z=1.000001736)&#x0A;feed(x=19.42500133, y=7.002724125, z=1.000001736)&#x0A;feed(x=19.42500133, y=17.85272413, z=1.000001736)&#x0A;feed(x=8.575001333, y=17.85272413, z=1.000001736)&#x0A;rapid(z=5)&#x0A;rapid(x=8.575001333, y=7.002724125)&#x0A;rapid(z=5)&#x0A;feed(z=3)&#x0A;feed(z=0.5000017361)&#x0A;feed(x=19.42500133, y=7.002724125, z=0.5000017361)&#x0A;feed(x=19.42500133, y=17.85272413, z=0.5000017361)&#x0A;feed(x=8.575001333, y=17.85272413, z=0.5000017361)&#x0A;feed(x=8.575001333, y=7.002724125, z=0.5000017361)&#x0A;feed(z=1.73606742e-06)&#x0A;feed(x=19.42500133, y=7.002724125, z=1.73606742e-06)&#x0A;feed(x=19.42500133, y=17.85272413, z=1.73606742e-06)&#x0A;feed(x=8.575001333, y=17.85272413, z=1.73606742e-06)&#x0A;feed(x=8.575001333, y=7.002724125, z=1.73606742e-06)&#x0A;rapid(z=5)&#x0A;spindle(7000)&#x0A;feedrate_hv(840, 100)&#x0A;flush_nc()&#x0A;clearance = float(5)&#x0A;rapid_safety_space = float(5)&#x0A;start_depth = float(3)&#x0A;step_down = float(0.5)&#x0A;final_depth = float(0)&#x0A;tool_diameter = float(3.15)&#x0A;cutting_edge_angle = float(0)&#x0A;#absolute() mode&#x0A;comment(&apos;Sketch&apos;)&#x0A;rapid(z=5)&#x0A;rapid(x=27.57500133, y=17.85272412)&#x0A;rapid(z=5)&#x0A;feed(z=3)&#x0A;feed(z=2.500001736)&#x0A;feed(x=27.57500133, y=7.002724125, z=2.500001736)&#x0A;feed(x=38.42500133, y=7.002724125, z=2.500001736)&#x0A;feed(x=38.42500133, y=17.85272413, z=2.500001736)&#x0A;feed(x=27.57500133, y=17.85272413, z=2.500001736)&#x0A;feed(z=2.000001736)&#x0A;feed(x=27.57500133, y=7.002724125, z=2.000001736)&#x0A;feed(x=38.42500133, y=7.002724125, z=2.000001736)&#x0A;feed(x=38.42500133, y=17.85272413, z=2.000001736)&#x0A;feed(x=27.57500133, y=17.85272413, z=2.000001736)&#x0A;feed(z=1.500001736)&#x0A;feed(x=27.57500133, y=7.002724125, z=1.500001736)&#x0A;feed(x=38.42500133, y=7.002724125, z=1.500001736)&#x0A;feed(x=38.42500133, y=17.85272413, z=1.500001736)&#x0A;feed(x=27.57500133, y=17.85272413, z=1.500001736)&#x0A;feed(z=1.000001736)&#x0A;feed(x=27.57500133, y=7.002724125, z=1.000001736)&#x0A;feed(x=38.42500133, y=7.002724125, z=1.000001736)&#x0A;feed(x=38.42500133, y=17.85272413, z=1.000001736)&#x0A;feed(x=27.57500133, y=17.85272413, z=1.000001736)&#x0A;feed(z=0.5000017361)&#x0A;feed(x=27.57500133, y=7.002724125, z=0.5000017361)&#x0A;feed(x=38.42500133, y=7.002724125, z=0.5000017361)&#x0A;feed(x=38.42500133, y=17.85272413, z=0.5000017361)&#x0A;feed(x=27.57500133, y=17.85272413, z=0.5000017361)&#x0A;feed(z=1.73606742e-06)&#x0A;feed(x=27.57500133, y=7.002724125, z=1.73606742e-06)&#x0A;feed(x=38.42500133, y=7.002724125, z=1.73606742e-06)&#x0A;feed(x=38.42500133, y=17.85272413, z=1.73606742e-06)&#x0A;feed(x=27.57500133, y=17.85272413, z=1.73606742e-06)&#x0A;rapid(z=5)&#x0A;spindle(7000)&#x0A;feedrate_hv(840, 100)&#x0A;flush_nc()&#x0A;clearance = float(5)&#x0A;rapid_safety_space = float(5)&#x0A;start_depth = float(3)&#x0A;step_down = float(0.5)&#x0A;final_depth = float(0)&#x0A;tool_diameter = float(3.15)&#x0A;cutting_edge_angle = float(0)&#x0A;#absolute() mode&#x0A;comment(&apos;Sketch&apos;)&#x0A;rapid(z=5)&#x0A;rapid(x=46.57500133, y=17.85272412)&#x0A;rapid(z=5)&#x0A;feed(z=3)&#x0A;feed(z=2.500001736)&#x0A;feed(x=46.57500133, y=7.002724125, z=2.500001736)&#x0A;feed(x=57.42500133, y=7.002724125, z=2.500001736)&#x0A;feed(x=57.42500133, y=17.85272413, z=2.500001736)&#x0A;feed(x=46.57500133, y=17.85272413, z=2.500001736)&#x0A;feed(z=2.000001736)&#x0A;feed(x=46.57500133, y=7.002724125, z=2.000001736)&#x0A;feed(x=57.42500133, y=7.002724125, z=2.000001736)&#x0A;feed(x=57.42500133, y=17.85272413, z=2.000001736)&#x0A;feed(x=46.57500133, y=17.85272413, z=2.000001736)&#x0A;feed(z=1.500001736)&#x0A;feed(x=46.57500133, y=7.002724125, z=1.500001736)&#x0A;feed(x=57.42500133, y=7.002724125, z=1.500001736)&#x0A;feed(x=57.42500133, y=17.85272413, z=1.500001736)&#x0A;feed(x=46.57500133, y=17.85272413, z=1.500001736)&#x0A;feed(z=1.000001736)&#x0A;feed(x=46.57500133, y=7.002724125, z=1.000001736)&#x0A;feed(x=57.42500133, y=7.002724125, z=1.000001736)&#x0A;feed(x=57.42500133, y=17.85272413, z=1.000001736)&#x0A;feed(x=46.57500133, y=17.85272413, z=1.000001736)&#x0A;feed(z=0.5000017361)&#x0A;feed(x=46.57500133, y=7.002724125, z=0.5000017361)&#x0A;feed(x=57.42500133, y=7.002724125, z=0.5000017361)&#x0A;feed(x=57.42500133, y=17.85272413, z=0.5000017361)&#x0A;feed(x=46.57500133, y=17.85272413, z=0.5000017361)&#x0A;feed(z=1.73606742e-06)&#x0A;feed(x=46.57500133, y=7.002724125, z=1.73606742e-06)&#x0A;feed(x=57.42500133, y=7.002724125, z=1.73606742e-06)&#x0A;feed(x=57.42500133, y=17.85272413, z=1.73606742e-06)&#x0A;feed(x=46.57500133, y=17.85272413, z=1.73606742e-06)&#x0A;rapid(z=5)&#x0A;program_end()&#x0A;" units="1" ProgramPathControlMode="3" ProgramMotionBlendingTolerance="0.0001" ProgramNaiveCamTolerance="0.0001" brinell_hardness="0" raw_material_name="Please select a material to machine" max_spindle_speed="0" safety_height_defined="0" safety_height="0" clearance_height="50" id="1">
+        <Tools>
+            <Tool title="3.15 mm Carbide Slot Cutter" tool_number="1" id="1">
+                <params diameter="3.15" x_offset="0" tool_length_offset="15" max_advance_per_revolution="0.12" automatically_generate_title="1" material="1" orientation="6" type="3" corner_radius="0" flat_radius="1.575" cutting_edge_angle="0" cutting_edge_height="9" front_angle="95" tool_angle="60" back_angle="25" probe_offset_x="0" probe_offset_y="0" width_over_thickness="1.8" feedrate="50" extrusion_material="0" layer_height="0.35" temperature="220" filament_diameter="3" flowrate="255" gradient="-0.1" pitch="1" direction="0" />
+            </Tool>
+            <Tool title="6 mm Carbide Slot Cutter" tool_number="2" id="2">
+                <params diameter="6" x_offset="0" tool_length_offset="63.5" max_advance_per_revolution="0.12" automatically_generate_title="1" material="1" orientation="6" type="3" corner_radius="0" flat_radius="6.35" cutting_edge_angle="0" cutting_edge_height="38.1" front_angle="95" tool_angle="60" back_angle="25" probe_offset_x="0" probe_offset_y="0" width_over_thickness="1.8" feedrate="50" extrusion_material="0" layer_height="0.35" temperature="220" filament_diameter="3" flowrate="255" gradient="-0.1" pitch="1" direction="0" />
+            </Tool>
+            <Tool title="6 mm Carbide Ball End Mill" tool_number="3" id="3">
+                <params diameter="6" x_offset="0" tool_length_offset="63.5" max_advance_per_revolution="0.12" automatically_generate_title="1" material="1" orientation="6" type="4" corner_radius="6.35" flat_radius="0" cutting_edge_angle="0" cutting_edge_height="38.1" front_angle="95" tool_angle="60" back_angle="25" probe_offset_x="0" probe_offset_y="0" width_over_thickness="1.8" feedrate="50" extrusion_material="0" layer_height="0.35" temperature="220" filament_diameter="3" flowrate="255" gradient="-0.1" pitch="1" direction="0" />
+            </Tool>
+            <Tool title="21 degreee Engraving Bit" tool_number="4" id="4">
+                <params diameter="3" x_offset="0" tool_length_offset="63.5" max_advance_per_revolution="0.12" automatically_generate_title="1" material="1" orientation="6" type="11" corner_radius="0" flat_radius="0.125" cutting_edge_angle="21" cutting_edge_height="7.48963106" front_angle="95" tool_angle="60" back_angle="25" probe_offset_x="0" probe_offset_y="0" width_over_thickness="1.8" feedrate="50" extrusion_material="0" layer_height="0.35" temperature="220" filament_diameter="3" flowrate="255" gradient="0" pitch="1" direction="0" />
+            </Tool>
+            <Tool title="15.98 mm Carbide Slot Cutter" tool_number="5" id="5">
+                <params diameter="15.98" x_offset="0" tool_length_offset="63.5" max_advance_per_revolution="0.12" automatically_generate_title="1" material="1" orientation="6" type="3" corner_radius="0" flat_radius="6.35" cutting_edge_angle="0" cutting_edge_height="38.1" front_angle="95" tool_angle="60" back_angle="25" probe_offset_x="0" probe_offset_y="0" width_over_thickness="1.8" feedrate="50" extrusion_material="0" layer_height="0.35" temperature="220" filament_diameter="3" flowrate="255" gradient="-0.1" pitch="1" direction="0" />
+            </Tool>
+        </Tools>
+        <Fixtures />
+        <Operations>
+            <Contour active="1" title="Contour" tool_number="1" id="1">
+                <params side="-1" entry_move_type="0" />
+                <depthop clear="5" down="0.5" startdepth="3" depth="0" r="5" abs_mode="0" />
+                <speedop hfeed="840" vfeed="100" spin="7000" />
+                <Sketch title="Sketch" id="21">
+                    <Line col="0" id="441">
+                        <Point col="0" x="7.000001333" y="19.427724125" z="1.73606742e-06" id="10563" />
+                        <Point col="0" x="21.000001333" y="19.427724125" z="1.73606742e-06" id="10564" />
+                    </Line>
+                    <Line col="0" id="442">
+                        <Point col="0" x="21.000001333" y="19.427724125" z="1.73606742e-06" id="10567" />
+                        <Point col="0" x="21.000001333" y="5.427724125" z="1.73606742e-06" id="10568" />
+                    </Line>
+                    <Line col="0" id="443">
+                        <Point col="0" x="21.000001333" y="5.427724125" z="1.73606742e-06" id="10571" />
+                        <Point col="0" x="7.000001333" y="5.427724125" z="1.73606742e-06" id="10572" />
+                    </Line>
+                    <Line col="0" id="444">
+                        <Point col="0" x="7.000001333" y="5.427724125" z="1.73606742e-06" id="10575" />
+                        <Point col="0" x="7.000001333" y="19.427724125" z="1.73606742e-06" id="10576" />
+                    </Line>
+                </Sketch>
+            </Contour>
+            <Contour active="1" title="Contour" tool_number="1" id="2">
+                <params side="-1" entry_move_type="0" />
+                <depthop clear="5" down="0.5" startdepth="3" depth="0" r="5" abs_mode="0" />
+                <speedop hfeed="840" vfeed="100" spin="7000" />
+                <Sketch title="Sketch" id="46">
+                    <Line col="0" id="541">
+                        <Point col="0" x="26.000001333" y="19.427724125" z="1.73606742e-06" id="11963" />
+                        <Point col="0" x="40.000001333" y="19.427724125" z="1.73606742e-06" id="11964" />
+                    </Line>
+                    <Line col="0" id="542">
+                        <Point col="0" x="40.000001333" y="19.427724125" z="1.73606742e-06" id="11967" />
+                        <Point col="0" x="40.000001333" y="5.427724125" z="1.73606742e-06" id="11968" />
+                    </Line>
+                    <Line col="0" id="543">
+                        <Point col="0" x="40.000001333" y="5.427724125" z="1.73606742e-06" id="11971" />
+                        <Point col="0" x="26.000001333" y="5.427724125" z="1.73606742e-06" id="11972" />
+                    </Line>
+                    <Line col="0" id="544">
+                        <Point col="0" x="26.000001333" y="5.427724125" z="1.73606742e-06" id="11975" />
+                        <Point col="0" x="26.000001333" y="19.427724125" z="1.73606742e-06" id="11976" />
+                    </Line>
+                </Sketch>
+            </Contour>
+            <Contour active="1" title="Contour" tool_number="1" id="3">
+                <params side="-1" entry_move_type="0" />
+                <depthop clear="5" down="0.5" startdepth="3" depth="0" r="5" abs_mode="0" />
+                <speedop hfeed="840" vfeed="100" spin="7000" />
+                <Sketch title="Sketch" id="34">
+                    <Line col="0" id="493">
+                        <Point col="0" x="45.000001333" y="19.427724125" z="1.73606742e-06" id="11291" />
+                        <Point col="0" x="59.000001333" y="19.427724125" z="1.73606742e-06" id="11292" />
+                    </Line>
+                    <Line col="0" id="494">
+                        <Point col="0" x="59.000001333" y="19.427724125" z="1.73606742e-06" id="11295" />
+                        <Point col="0" x="59.000001333" y="5.427724125" z="1.73606742e-06" id="11296" />
+                    </Line>
+                    <Line col="0" id="495">
+                        <Point col="0" x="59.000001333" y="5.427724125" z="1.73606742e-06" id="11299" />
+                        <Point col="0" x="45.000001333" y="5.427724125" z="1.73606742e-06" id="11300" />
+                    </Line>
+                    <Line col="0" id="496">
+                        <Point col="0" x="45.000001333" y="5.427724125" z="1.73606742e-06" id="11303" />
+                        <Point col="0" x="45.000001333" y="19.427724125" z="1.73606742e-06" id="11304" />
+                    </Line>
+                </Sketch>
+            </Contour>
+        </Operations>
+        <SpeedReferences estimate_when_possible="1" id="1">
+            <SpeedReference title="Aluminium (15) with Carbide" surface_speed="182" tool_material="1" brinell_hardness_of_raw_material="15" raw_material_name="Aluminium" id="1" />
+            <SpeedReference title="Aluminium (15) with Carbide" surface_speed="33" tool_material="1" brinell_hardness_of_raw_material="15" raw_material_name="Aluminium" id="2" />
+            <SpeedReference title="Mild Steel (150) with Carbide" surface_speed="182" tool_material="1" brinell_hardness_of_raw_material="150" raw_material_name="Mild Steel" id="3" />
+            <SpeedReference title="Mild Steel (150) with Carbide" surface_speed="59" tool_material="1" brinell_hardness_of_raw_material="150" raw_material_name="Mild Steel" id="4" />
+            <SpeedReference title="Alloy Steel &lt; 0.3% carbon (200) with Carbide" surface_speed="106" tool_material="1" brinell_hardness_of_raw_material="200" raw_material_name="Alloy Steel &lt; 0.3% carbon" id="5" />
+            <SpeedReference title="Alloy Steel &lt; 0.3% carbon (200) with Carbide" surface_speed="24" tool_material="1" brinell_hardness_of_raw_material="200" raw_material_name="Alloy Steel &lt; 0.3% carbon" id="6" />
+            <SpeedReference title="Alloy Steel &gt; 0.3% carbon (200) with Carbide" surface_speed="99" tool_material="1" brinell_hardness_of_raw_material="200" raw_material_name="Alloy Steel &gt; 0.3% carbon" id="7" />
+            <SpeedReference title="Alloy Steel &gt; 0.3% carbon (200) with Carbide" surface_speed="24" tool_material="1" brinell_hardness_of_raw_material="200" raw_material_name="Alloy Steel &gt; 0.3% carbon" id="8" />
+            <CuttingRate title="Brinell (15) at 400 (mm^3/min)" brinell_hardness_of_raw_material="15" max_material_removal_rate="400" id="1" />
+            <CuttingRate title="Brinell (150) at 1600 (mm^3/min)" brinell_hardness_of_raw_material="150" max_material_removal_rate="1600" id="2" />
+        </SpeedReferences>
+        <nccode edited="0" id="1">
+            <ncblock id="0">
+                <text col="comment">(Test program)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N10</text>
+                <text>G90</text>
+                <text>&#x09; </text>
+                <text col="comment">(Absolute Coordinates)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N20</text>
+                <text col="prep">G21</text>
+                <text>&#x09; </text>
+                <text col="comment">(Metric Values)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N3017</text>
+                <text>&#x09; </text>
+                <text col="comment">(Select XY Plane)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N40</text>
+                <text col="comment">(Feeds and Speeds set for machining Please select a material to machine)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N50</text>
+                <text>G54</text>
+                <text>&#x09; </text>
+                <text col="comment">(Select Relative Coordinate System)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N60</text>
+                <text col="comment">(tool change to 3.15 mm Carbide Slot Cutter)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N70</text>
+                <text col="tool">T1</text>
+                <text col="misc">M06</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N80</text>
+                <text col="comment">(Sketch)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N90</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <text col="axis">S7000</text>
+                <text col="misc">M03</text>
+                <path col="rapid">
+                    <line tool_number="0" x="0" y="0" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N100</text>
+                <text col="rapid">G00</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y17.852</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N110</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N120</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z3</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="3" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N130</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N140</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2.5</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N150</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="7.002" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N160</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="17.852" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N170</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N180</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z2</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N190</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N200</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="7.002" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N210</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="17.852" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N220</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N230</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N240</text>
+                <text col="rapid">G00</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y7.002</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="7.002" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N250</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="7.002" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N260</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z3</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="3" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N270</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N280</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1.5</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="7.002" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N290</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="17.852" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N300</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N310</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N320</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="7.002" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N330</text>
+                <text col="rapid">G00</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y17.852</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N340</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N350</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z3</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="3" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N360</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N370</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N380</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="7.002" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N390</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="17.852" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N400</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N410</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N420</text>
+                <text col="rapid">G00</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y7.002</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="7.002" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N430</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="7.002" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N440</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z3</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="3" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N450</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N460</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0.5</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="7.002" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N470</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="17.852" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N480</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N490</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N500</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z0</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N510</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="7.002" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N520</text>
+                <text col="feed">G01</text>
+                <text col="axis">X19.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0</text>
+                <path col="feed">
+                    <line tool_number="0" x="19.425" y="17.852" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N530</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="17.852" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N540</text>
+                <text col="feed">G01</text>
+                <text col="axis">X8.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0</text>
+                <path col="feed">
+                    <line tool_number="0" x="8.575" y="7.002" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N550</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="7.002" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N560</text>
+                <text col="comment">(Sketch)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N570</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <text col="axis">S7000</text>
+                <text col="misc">M03</text>
+                <path col="rapid">
+                    <line tool_number="0" x="8.575" y="7.002" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N580</text>
+                <text col="rapid">G00</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y17.852</text>
+                <path col="rapid">
+                    <line tool_number="0" x="27.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N590</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="27.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N600</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z3</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="3" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N610</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N620</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2.5</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="7.002" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N630</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="7.002" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N640</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="17.852" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N650</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N660</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z2</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N670</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="7.002" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N680</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="7.002" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N690</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="17.852" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N700</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N710</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z1.5</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N720</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1.5</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="7.002" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N730</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="7.002" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N740</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="17.852" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N750</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N760</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z1</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N770</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="7.002" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N780</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="7.002" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N790</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="17.852" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N800</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N810</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z0.5</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N820</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0.5</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="7.002" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N830</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="7.002" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N840</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="17.852" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N850</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N860</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z0</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N870</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="7.002" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N880</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="7.002" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N890</text>
+                <text col="feed">G01</text>
+                <text col="axis">X38.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0</text>
+                <path col="feed">
+                    <line tool_number="0" x="38.425" y="17.852" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N900</text>
+                <text col="feed">G01</text>
+                <text col="axis">X27.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0</text>
+                <path col="feed">
+                    <line tool_number="0" x="27.575" y="17.852" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N910</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="27.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N920</text>
+                <text col="comment">(Sketch)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N930</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <text col="axis">S7000</text>
+                <text col="misc">M03</text>
+                <path col="rapid">
+                    <line tool_number="0" x="27.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N940</text>
+                <text col="rapid">G00</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y17.852</text>
+                <path col="rapid">
+                    <line tool_number="0" x="46.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N950</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="46.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N960</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z3</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="3" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N970</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N980</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2.5</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="7.002" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N990</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="7.002" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1000</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="17.852" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1010</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="2.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1020</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z2</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1030</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="7.002" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1040</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z2</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="7.002" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1050</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="17.852" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1060</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z2</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="2" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1070</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z1.5</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1080</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1.5</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="7.002" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1090</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="7.002" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1100</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="17.852" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1110</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="1.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1120</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z1</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1130</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="7.002" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1140</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="7.002" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1150</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="17.852" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1160</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z1</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="1" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1170</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z0.5</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1180</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0.5</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="7.002" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1190</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="7.002" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1200</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="17.852" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1210</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0.5</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="0.5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1220</text>
+                <text col="feed">G01</text>
+                <text col="axis">Z0</text>
+                <text col="axis">F100</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1230</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0</text>
+                <text col="axis">F840</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="7.002" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1240</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y7.002</text>
+                <text col="axis">Z0</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="7.002" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1250</text>
+                <text col="feed">G01</text>
+                <text col="axis">X57.425</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0</text>
+                <path col="feed">
+                    <line tool_number="0" x="57.425" y="17.852" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1260</text>
+                <text col="feed">G01</text>
+                <text col="axis">X46.575</text>
+                <text col="axis">Y17.852</text>
+                <text col="axis">Z0</text>
+                <path col="feed">
+                    <line tool_number="0" x="46.575" y="17.852" z="0" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1270</text>
+                <text col="rapid">G00</text>
+                <text col="axis">Z5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="46.575" y="17.852" z="5" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N1280</text>
+                <text col="misc">M02</text>
+            </ncblock>
+        </nccode>
+    </Program>
+    <Sketch title="Sketch" id="2">
+        <Line col="0" id="364">
+            <Point col="0" x="30.700001333" y="-51.5722759" z="1.73606742e-06" id="4339" />
+            <Point col="0" x="30.700001333" y="-37.5705336" z="1.73606742e-06" id="4340" />
+        </Line>
+        <Line col="0" id="361">
+            <Point col="0" x="30.700001333" y="-37.5705336" z="1.73606742e-06" id="4327" />
+            <Point col="0" x="44.386060377" y="-37.5705336" z="1.73606742e-06" id="4328" />
+        </Line>
+        <Line col="0" id="362">
+            <Point col="0" x="44.386060377" y="-37.5705336" z="1.73606742e-06" id="4331" />
+            <Point col="0" x="44.386060377" y="-51.5722759" z="1.73606742e-06" id="4332" />
+        </Line>
+        <Line col="0" id="363">
+            <Point col="0" x="44.386060377" y="-51.5722759" z="1.73606742e-06" id="4335" />
+            <Point col="0" x="30.700001333" y="-51.5722759" z="1.73606742e-06" id="4336" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="3">
+        <Line col="0" id="365">
+            <Point col="0" x="356.500001333" y="54.627724125" z="1.73606742e-06" id="6503" />
+            <Point col="0" x="4.000001333" y="54.627724125" z="1.73606742e-06" id="6504" />
+        </Line>
+        <Line col="0" id="367">
+            <Point col="0" x="1.33715301e-06" y="50.627724125" z="1.73606742e-06" id="6512" />
+            <Point col="0" x="1.33715301e-06" y="-75.0722759" z="1.73606742e-06" id="6513" />
+        </Line>
+        <Line col="0" id="369">
+            <Point col="0" x="4.000001333" y="-79.0722759" z="1.73606742e-06" id="6521" />
+            <Point col="0" x="356.939238309" y="-79.0722759" z="1.73606742e-06" id="6522" />
+        </Line>
+        <Line col="0" id="371">
+            <Point col="0" x="360.500001333" y="-75.5115129" z="1.73606742e-06" id="6530" />
+            <Point col="0" x="360.500001333" y="50.627724125" z="1.73606742e-06" id="6531" />
+        </Line>
+        <Arc col="0" ax="0" ay="0" az="1" id="366">
+            <Point col="0" x="4.000001333" y="54.627724125" z="1.73606742e-06" id="6507" />
+            <Point col="0" x="1.33715301e-06" y="50.627724125" z="1.73606742e-06" id="6508" />
+            <Point col="0" x="4.000001333" y="50.627724125" z="1.73606742e-06" id="6509" />
+        </Arc>
+        <Arc col="0" ax="0" ay="0" az="1" id="368">
+            <Point col="0" x="1.33715301e-06" y="-75.0722759" z="1.73606742e-06" id="6516" />
+            <Point col="0" x="4.000001333" y="-79.0722759" z="1.73606742e-06" id="6517" />
+            <Point col="0" x="4.000001333" y="-75.0722759" z="1.73606742e-06" id="6518" />
+        </Arc>
+        <Arc col="0" ax="0" ay="0" az="1" id="370">
+            <Point col="0" x="356.939238309" y="-79.0722759" z="1.73606742e-06" id="6525" />
+            <Point col="0" x="360.500001333" y="-75.5115129" z="1.73606742e-06" id="6526" />
+            <Point col="0" x="356.939238309" y="-75.5115129" z="1.73606742e-06" id="6527" />
+        </Arc>
+        <Arc col="0" ax="0" ay="0" az="1" id="372">
+            <Point col="0" x="360.500001333" y="50.627724125" z="1.73606742e-06" id="6534" />
+            <Point col="0" x="356.500001333" y="54.627724125" z="1.73606742e-06" id="6535" />
+            <Point col="0" x="356.500001333" y="50.627724125" z="1.73606742e-06" id="6536" />
+        </Arc>
+    </Sketch>
+    <Sketch title="Sketch" id="4">
+        <Line col="0" id="373">
+            <Point col="0" x="78.099999333" y="-18.5722759" z="1.73606742e-06" id="6619" />
+            <Point col="0" x="92.100001333" y="-18.5722759" z="1.73606742e-06" id="6620" />
+        </Line>
+        <Line col="0" id="374">
+            <Point col="0" x="92.100001333" y="-18.5722759" z="1.73606742e-06" id="6623" />
+            <Point col="0" x="92.100001333" y="-32.5722759" z="1.73606742e-06" id="6624" />
+        </Line>
+        <Line col="0" id="375">
+            <Point col="0" x="92.100001333" y="-32.5722759" z="1.73606742e-06" id="6627" />
+            <Point col="0" x="78.099999333" y="-32.5722759" z="1.73606742e-06" id="6628" />
+        </Line>
+        <Line col="0" id="376">
+            <Point col="0" x="78.099999333" y="-32.5722759" z="1.73606742e-06" id="6631" />
+            <Point col="0" x="78.099999333" y="-18.5722759" z="1.73606742e-06" id="6632" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="5">
+        <Line col="0" id="377">
+            <Point col="0" x="249.100001333" y="-18.5722759" z="1.73606742e-06" id="6675" />
+            <Point col="0" x="263.100001333" y="-18.5722759" z="1.73606742e-06" id="6676" />
+        </Line>
+        <Line col="0" id="378">
+            <Point col="0" x="263.100001333" y="-18.5722759" z="1.73606742e-06" id="6679" />
+            <Point col="0" x="263.100001333" y="-32.5722759" z="1.73606742e-06" id="6680" />
+        </Line>
+        <Line col="0" id="379">
+            <Point col="0" x="263.100001333" y="-32.5722759" z="1.73606742e-06" id="6683" />
+            <Point col="0" x="249.100001333" y="-32.5722759" z="1.73606742e-06" id="6684" />
+        </Line>
+        <Line col="0" id="380">
+            <Point col="0" x="249.100001333" y="-32.5722759" z="1.73606742e-06" id="6687" />
+            <Point col="0" x="249.100001333" y="-18.5722759" z="1.73606742e-06" id="6688" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="6">
+        <Line col="0" id="381">
+            <Point col="0" x="87.691521476" y="-37.5660718" z="1.73606742e-06" id="6731" />
+            <Point col="0" x="101.691521476" y="-37.5660718" z="1.73606742e-06" id="6732" />
+        </Line>
+        <Line col="0" id="382">
+            <Point col="0" x="101.691521476" y="-37.5660718" z="1.73606742e-06" id="6735" />
+            <Point col="0" x="101.691521476" y="-51.5660718" z="1.73606742e-06" id="6736" />
+        </Line>
+        <Line col="0" id="383">
+            <Point col="0" x="101.691521476" y="-51.5660718" z="1.73606742e-06" id="6739" />
+            <Point col="0" x="87.691521476" y="-51.5660718" z="1.73606742e-06" id="6740" />
+        </Line>
+        <Line col="0" id="384">
+            <Point col="0" x="87.691521476" y="-51.5660718" z="1.73606742e-06" id="6743" />
+            <Point col="0" x="87.691521476" y="-37.5660718" z="1.73606742e-06" id="6744" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="7">
+        <Line col="0" id="385">
+            <Point col="0" x="11.673001333" y="-56.5722759" z="1.73606742e-06" id="6787" />
+            <Point col="0" x="25.673001333" y="-56.5722759" z="1.73606742e-06" id="6788" />
+        </Line>
+        <Line col="0" id="386">
+            <Point col="0" x="25.673001333" y="-56.5722759" z="1.73606742e-06" id="6791" />
+            <Point col="0" x="25.673001333" y="-70.5722759" z="1.73606742e-06" id="6792" />
+        </Line>
+        <Line col="0" id="387">
+            <Point col="0" x="25.673001333" y="-70.5722759" z="1.73606742e-06" id="6795" />
+            <Point col="0" x="11.673001333" y="-70.5722759" z="1.73606742e-06" id="6796" />
+        </Line>
+        <Line col="0" id="388">
+            <Point col="0" x="11.673001333" y="-70.5722759" z="1.73606742e-06" id="6799" />
+            <Point col="0" x="11.673001333" y="-56.5722759" z="1.73606742e-06" id="6800" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="8">
+        <Line col="0" id="389">
+            <Point col="0" x="40.100001333" y="-18.5722759" z="1.73606742e-06" id="6843" />
+            <Point col="0" x="54.100001333" y="-18.5722759" z="1.73606742e-06" id="6844" />
+        </Line>
+        <Line col="0" id="390">
+            <Point col="0" x="54.100001333" y="-18.5722759" z="1.73606742e-06" id="6847" />
+            <Point col="0" x="54.100001333" y="-32.5722759" z="1.73606742e-06" id="6848" />
+        </Line>
+        <Line col="0" id="391">
+            <Point col="0" x="54.100001333" y="-32.5722759" z="1.73606742e-06" id="6851" />
+            <Point col="0" x="40.100001333" y="-32.5722759" z="1.73606742e-06" id="6852" />
+        </Line>
+        <Line col="0" id="392">
+            <Point col="0" x="40.100001333" y="-32.5722759" z="1.73606742e-06" id="6855" />
+            <Point col="0" x="40.100001333" y="-18.5722759" z="1.73606742e-06" id="6856" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="9">
+        <Line col="0" id="393">
+            <Point col="0" x="97.100001333" y="-18.5722759" z="1.73606742e-06" id="6899" />
+            <Point col="0" x="111.100001333" y="-18.5722759" z="1.73606742e-06" id="6900" />
+        </Line>
+        <Line col="0" id="394">
+            <Point col="0" x="111.100001333" y="-18.5722759" z="1.73606742e-06" id="6903" />
+            <Point col="0" x="111.100001333" y="-32.5722759" z="1.73606742e-06" id="6904" />
+        </Line>
+        <Line col="0" id="395">
+            <Point col="0" x="111.100001333" y="-32.5722759" z="1.73606742e-06" id="6907" />
+            <Point col="0" x="97.100001333" y="-32.5722759" z="1.73606742e-06" id="6908" />
+        </Line>
+        <Line col="0" id="396">
+            <Point col="0" x="97.100001333" y="-32.5722759" z="1.73606742e-06" id="6911" />
+            <Point col="0" x="97.100001333" y="-18.5722759" z="1.73606742e-06" id="6912" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="10">
+        <Line col="0" id="397">
+            <Point col="0" x="116.100001333" y="-18.5722759" z="1.73606742e-06" id="6955" />
+            <Point col="0" x="130.100001333" y="-18.5722759" z="1.73606742e-06" id="6956" />
+        </Line>
+        <Line col="0" id="398">
+            <Point col="0" x="130.100001333" y="-18.5722759" z="1.73606742e-06" id="6959" />
+            <Point col="0" x="130.100001333" y="-32.5722759" z="1.73606742e-06" id="6960" />
+        </Line>
+        <Line col="0" id="399">
+            <Point col="0" x="130.100001333" y="-32.5722759" z="1.73606742e-06" id="6963" />
+            <Point col="0" x="116.100001333" y="-32.5722759" z="1.73606742e-06" id="6964" />
+        </Line>
+        <Line col="0" id="400">
+            <Point col="0" x="116.100001333" y="-32.5722759" z="1.73606742e-06" id="6967" />
+            <Point col="0" x="116.100001333" y="-18.5722759" z="1.73606742e-06" id="6968" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="11">
+        <Line col="0" id="401">
+            <Point col="0" x="135.100001333" y="-18.5722759" z="1.73606742e-06" id="7011" />
+            <Point col="0" x="149.100001333" y="-18.5722759" z="1.73606742e-06" id="7012" />
+        </Line>
+        <Line col="0" id="402">
+            <Point col="0" x="149.100001333" y="-18.5722759" z="1.73606742e-06" id="7015" />
+            <Point col="0" x="149.100001333" y="-32.5722759" z="1.73606742e-06" id="7016" />
+        </Line>
+        <Line col="0" id="403">
+            <Point col="0" x="149.100001333" y="-32.5722759" z="1.73606742e-06" id="7019" />
+            <Point col="0" x="135.100001333" y="-32.5722759" z="1.73606742e-06" id="7020" />
+        </Line>
+        <Line col="0" id="404">
+            <Point col="0" x="135.100001333" y="-32.5722759" z="1.73606742e-06" id="7023" />
+            <Point col="0" x="135.100001333" y="-18.5722759" z="1.73606742e-06" id="7024" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="12">
+        <Line col="0" id="405">
+            <Point col="0" x="154.100001333" y="-18.5722759" z="1.73606742e-06" id="7067" />
+            <Point col="0" x="168.100001333" y="-18.5722759" z="1.73606742e-06" id="7068" />
+        </Line>
+        <Line col="0" id="406">
+            <Point col="0" x="168.100001333" y="-18.5722759" z="1.73606742e-06" id="7071" />
+            <Point col="0" x="168.100001333" y="-32.5722759" z="1.73606742e-06" id="7072" />
+        </Line>
+        <Line col="0" id="407">
+            <Point col="0" x="168.100001333" y="-32.5722759" z="1.73606742e-06" id="7075" />
+            <Point col="0" x="154.100001333" y="-32.5722759" z="1.73606742e-06" id="7076" />
+        </Line>
+        <Line col="0" id="408">
+            <Point col="0" x="154.100001333" y="-32.5722759" z="1.73606742e-06" id="7079" />
+            <Point col="0" x="154.100001333" y="-18.5722759" z="1.73606742e-06" id="7080" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="13">
+        <Line col="0" id="409">
+            <Point col="0" x="173.100001333" y="-18.5722759" z="1.73606742e-06" id="7123" />
+            <Point col="0" x="187.100001333" y="-18.5722759" z="1.73606742e-06" id="7124" />
+        </Line>
+        <Line col="0" id="410">
+            <Point col="0" x="187.100001333" y="-18.5722759" z="1.73606742e-06" id="7127" />
+            <Point col="0" x="187.100001333" y="-32.5722759" z="1.73606742e-06" id="7128" />
+        </Line>
+        <Line col="0" id="411">
+            <Point col="0" x="187.100001333" y="-32.5722759" z="1.73606742e-06" id="7131" />
+            <Point col="0" x="173.100001333" y="-32.5722759" z="1.73606742e-06" id="7132" />
+        </Line>
+        <Line col="0" id="412">
+            <Point col="0" x="173.100001333" y="-32.5722759" z="1.73606742e-06" id="7135" />
+            <Point col="0" x="173.100001333" y="-18.5722759" z="1.73606742e-06" id="7136" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="14">
+        <Line col="0" id="413">
+            <Point col="0" x="192.100001333" y="-18.5722759" z="1.73606742e-06" id="7179" />
+            <Point col="0" x="206.100001333" y="-18.5722759" z="1.73606742e-06" id="7180" />
+        </Line>
+        <Line col="0" id="414">
+            <Point col="0" x="206.100001333" y="-18.5722759" z="1.73606742e-06" id="7183" />
+            <Point col="0" x="206.100001333" y="-32.5722759" z="1.73606742e-06" id="7184" />
+        </Line>
+        <Line col="0" id="415">
+            <Point col="0" x="206.100001333" y="-32.5722759" z="1.73606742e-06" id="7187" />
+            <Point col="0" x="192.100001333" y="-32.5722759" z="1.73606742e-06" id="7188" />
+        </Line>
+        <Line col="0" id="416">
+            <Point col="0" x="192.100001333" y="-32.5722759" z="1.73606742e-06" id="7191" />
+            <Point col="0" x="192.100001333" y="-18.5722759" z="1.73606742e-06" id="7192" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="15">
+        <Line col="0" id="417">
+            <Point col="0" x="211.100001333" y="-18.5722759" z="1.73606742e-06" id="8443" />
+            <Point col="0" x="225.100001333" y="-18.5722759" z="1.73606742e-06" id="8444" />
+        </Line>
+        <Line col="0" id="418">
+            <Point col="0" x="225.100001333" y="-18.5722759" z="1.73606742e-06" id="8447" />
+            <Point col="0" x="225.100001333" y="-32.5722759" z="1.73606742e-06" id="8448" />
+        </Line>
+        <Line col="0" id="419">
+            <Point col="0" x="225.100001333" y="-32.5722759" z="1.73606742e-06" id="8451" />
+            <Point col="0" x="211.100001333" y="-32.5722759" z="1.73606742e-06" id="8452" />
+        </Line>
+        <Line col="0" id="420">
+            <Point col="0" x="211.100001333" y="-32.5722759" z="1.73606742e-06" id="8455" />
+            <Point col="0" x="211.100001333" y="-18.5722759" z="1.73606742e-06" id="8456" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="16">
+        <Line col="0" id="421">
+            <Point col="0" x="230.100001333" y="-18.5722759" z="1.73606742e-06" id="10283" />
+            <Point col="0" x="244.100001333" y="-18.5722759" z="1.73606742e-06" id="10284" />
+        </Line>
+        <Line col="0" id="422">
+            <Point col="0" x="244.100001333" y="-18.5722759" z="1.73606742e-06" id="10287" />
+            <Point col="0" x="244.100001333" y="-32.5722759" z="1.73606742e-06" id="10288" />
+        </Line>
+        <Line col="0" id="423">
+            <Point col="0" x="244.100001333" y="-32.5722759" z="1.73606742e-06" id="10291" />
+            <Point col="0" x="230.100001333" y="-32.5722759" z="1.73606742e-06" id="10292" />
+        </Line>
+        <Line col="0" id="424">
+            <Point col="0" x="230.100001333" y="-32.5722759" z="1.73606742e-06" id="10295" />
+            <Point col="0" x="230.100001333" y="-18.5722759" z="1.73606742e-06" id="10296" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="17">
+        <Line col="0" id="425">
+            <Point col="0" x="270.250001333" y="-9.07227587" z="1.73606742e-06" id="10339" />
+            <Point col="0" x="284.250001333" y="-9.07227587" z="1.73606742e-06" id="10340" />
+        </Line>
+        <Line col="0" id="426">
+            <Point col="0" x="284.250001333" y="-9.07227587" z="1.73606742e-06" id="10343" />
+            <Point col="0" x="284.250001333" y="-23.0722759" z="1.73606742e-06" id="10344" />
+        </Line>
+        <Line col="0" id="427">
+            <Point col="0" x="284.250001333" y="-23.0722759" z="1.73606742e-06" id="10347" />
+            <Point col="0" x="270.250001333" y="-23.0722759" z="1.73606742e-06" id="10348" />
+        </Line>
+        <Line col="0" id="428">
+            <Point col="0" x="270.250001333" y="-23.0722759" z="1.73606742e-06" id="10351" />
+            <Point col="0" x="270.250001333" y="-9.07227587" z="1.73606742e-06" id="10352" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="18">
+        <Line col="0" id="429">
+            <Point col="0" x="11.625001333" y="0.427724125" z="1.73606742e-06" id="10395" />
+            <Point col="0" x="25.625001333" y="0.427724125" z="1.73606742e-06" id="10396" />
+        </Line>
+        <Line col="0" id="430">
+            <Point col="0" x="25.625001333" y="0.427724125" z="1.73606742e-06" id="10399" />
+            <Point col="0" x="25.625001333" y="-13.5722759" z="1.73606742e-06" id="10400" />
+        </Line>
+        <Line col="0" id="431">
+            <Point col="0" x="25.625001333" y="-13.5722759" z="1.73606742e-06" id="10403" />
+            <Point col="0" x="11.625001333" y="-13.5722759" z="1.73606742e-06" id="10404" />
+        </Line>
+        <Line col="0" id="432">
+            <Point col="0" x="11.625001333" y="-13.5722759" z="1.73606742e-06" id="10407" />
+            <Point col="0" x="11.625001333" y="0.427724125" z="1.73606742e-06" id="10408" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="19">
+        <Line col="0" id="433">
+            <Point col="0" x="35.250001333" y="0.427724125" z="1.73606742e-06" id="10451" />
+            <Point col="0" x="49.250001333" y="0.427724125" z="1.73606742e-06" id="10452" />
+        </Line>
+        <Line col="0" id="434">
+            <Point col="0" x="49.250001333" y="0.427724125" z="1.73606742e-06" id="10455" />
+            <Point col="0" x="49.250001333" y="-13.5722759" z="1.73606742e-06" id="10456" />
+        </Line>
+        <Line col="0" id="435">
+            <Point col="0" x="49.250001333" y="-13.5722759" z="1.73606742e-06" id="10459" />
+            <Point col="0" x="35.250001333" y="-13.5722759" z="1.73606742e-06" id="10460" />
+        </Line>
+        <Line col="0" id="436">
+            <Point col="0" x="35.250001333" y="-13.5722759" z="1.73606742e-06" id="10463" />
+            <Point col="0" x="35.250001333" y="0.427724125" z="1.73606742e-06" id="10464" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="20">
+        <Line col="0" id="437">
+            <Point col="0" x="54.250001333" y="0.427724125" z="1.73606742e-06" id="10507" />
+            <Point col="0" x="68.250001333" y="0.427724125" z="1.73606742e-06" id="10508" />
+        </Line>
+        <Line col="0" id="438">
+            <Point col="0" x="68.250001333" y="0.427724125" z="1.73606742e-06" id="10511" />
+            <Point col="0" x="68.250001333" y="-13.5722759" z="1.73606742e-06" id="10512" />
+        </Line>
+        <Line col="0" id="439">
+            <Point col="0" x="68.250001333" y="-13.5722759" z="1.73606742e-06" id="10515" />
+            <Point col="0" x="54.250001333" y="-13.5722759" z="1.73606742e-06" id="10516" />
+        </Line>
+        <Line col="0" id="440">
+            <Point col="0" x="54.250001333" y="-13.5722759" z="1.73606742e-06" id="10519" />
+            <Point col="0" x="54.250001333" y="0.427724125" z="1.73606742e-06" id="10520" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="21">
+        <Line col="0" id="441">
+            <Point col="0" x="7.000001333" y="19.427724125" z="1.73606742e-06" id="10563" />
+            <Point col="0" x="21.000001333" y="19.427724125" z="1.73606742e-06" id="10564" />
+        </Line>
+        <Line col="0" id="442">
+            <Point col="0" x="21.000001333" y="19.427724125" z="1.73606742e-06" id="10567" />
+            <Point col="0" x="21.000001333" y="5.427724125" z="1.73606742e-06" id="10568" />
+        </Line>
+        <Line col="0" id="443">
+            <Point col="0" x="21.000001333" y="5.427724125" z="1.73606742e-06" id="10571" />
+            <Point col="0" x="7.000001333" y="5.427724125" z="1.73606742e-06" id="10572" />
+        </Line>
+        <Line col="0" id="444">
+            <Point col="0" x="7.000001333" y="5.427724125" z="1.73606742e-06" id="10575" />
+            <Point col="0" x="7.000001333" y="19.427724125" z="1.73606742e-06" id="10576" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="22">
+        <Line col="0" id="445">
+            <Point col="0" x="7.000001333" y="47.927724125" z="1.73606742e-06" id="10619" />
+            <Point col="0" x="21.000001333" y="47.927724125" z="1.73606742e-06" id="10620" />
+        </Line>
+        <Line col="0" id="446">
+            <Point col="0" x="21.000001333" y="47.927724125" z="1.73606742e-06" id="10623" />
+            <Point col="0" x="21.000001333" y="33.927724125" z="1.73606742e-06" id="10624" />
+        </Line>
+        <Line col="0" id="447">
+            <Point col="0" x="21.000001333" y="33.927724125" z="1.73606742e-06" id="10627" />
+            <Point col="0" x="7.000001333" y="33.927724125" z="1.73606742e-06" id="10628" />
+        </Line>
+        <Line col="0" id="448">
+            <Point col="0" x="7.000001333" y="33.927724125" z="1.73606742e-06" id="10631" />
+            <Point col="0" x="7.000001333" y="47.927724125" z="1.73606742e-06" id="10632" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="23">
+        <Line col="0" id="449">
+            <Point col="0" x="45.000001333" y="47.927724125" z="1.73606742e-06" id="10675" />
+            <Point col="0" x="59.000001333" y="47.927724125" z="1.73606742e-06" id="10676" />
+        </Line>
+        <Line col="0" id="450">
+            <Point col="0" x="59.000001333" y="47.927724125" z="1.73606742e-06" id="10679" />
+            <Point col="0" x="59.000001333" y="33.927724125" z="1.73606742e-06" id="10680" />
+        </Line>
+        <Line col="0" id="451">
+            <Point col="0" x="59.000001333" y="33.927724125" z="1.73606742e-06" id="10683" />
+            <Point col="0" x="45.000001333" y="33.927724125" z="1.73606742e-06" id="10684" />
+        </Line>
+        <Line col="0" id="452">
+            <Point col="0" x="45.000001333" y="33.927724125" z="1.73606742e-06" id="10687" />
+            <Point col="0" x="45.000001333" y="47.927724125" z="1.73606742e-06" id="10688" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="24">
+        <Line col="0" id="453">
+            <Point col="0" x="14.050001333" y="-18.5722759" z="1.73606742e-06" id="10731" />
+            <Point col="0" x="28.050001333" y="-18.5722759" z="1.73606742e-06" id="10732" />
+        </Line>
+        <Line col="0" id="454">
+            <Point col="0" x="28.050001333" y="-18.5722759" z="1.73606742e-06" id="10735" />
+            <Point col="0" x="28.050001333" y="-32.5722759" z="1.73606742e-06" id="10736" />
+        </Line>
+        <Line col="0" id="455">
+            <Point col="0" x="28.050001333" y="-32.5722759" z="1.73606742e-06" id="10739" />
+            <Point col="0" x="14.050001333" y="-32.5722759" z="1.73606742e-06" id="10740" />
+        </Line>
+        <Line col="0" id="456">
+            <Point col="0" x="14.050001333" y="-32.5722759" z="1.73606742e-06" id="10743" />
+            <Point col="0" x="14.050001333" y="-18.5722759" z="1.73606742e-06" id="10744" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="25">
+        <Line col="0" id="457">
+            <Point col="0" x="40.018001333" y="-56.5722759" z="1.73606742e-06" id="10787" />
+            <Point col="0" x="54.018001333" y="-56.5722759" z="1.73606742e-06" id="10788" />
+        </Line>
+        <Line col="0" id="458">
+            <Point col="0" x="54.018001333" y="-56.5722759" z="1.73606742e-06" id="10791" />
+            <Point col="0" x="54.018001333" y="-70.5722759" z="1.73606742e-06" id="10792" />
+        </Line>
+        <Line col="0" id="459">
+            <Point col="0" x="54.018001333" y="-70.5722759" z="1.73606742e-06" id="10795" />
+            <Point col="0" x="40.018001333" y="-70.5722759" z="1.73606742e-06" id="10796" />
+        </Line>
+        <Line col="0" id="460">
+            <Point col="0" x="40.018001333" y="-70.5722759" z="1.73606742e-06" id="10799" />
+            <Point col="0" x="40.018001333" y="-56.5722759" z="1.73606742e-06" id="10800" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="26">
+        <Line col="0" id="461">
+            <Point col="0" x="68.362001333" y="-56.5722759" z="1.73606742e-06" id="10843" />
+            <Point col="0" x="82.362001333" y="-56.5722759" z="1.73606742e-06" id="10844" />
+        </Line>
+        <Line col="0" id="462">
+            <Point col="0" x="82.362001333" y="-56.5722759" z="1.73606742e-06" id="10847" />
+            <Point col="0" x="82.362001333" y="-70.5722759" z="1.73606742e-06" id="10848" />
+        </Line>
+        <Line col="0" id="463">
+            <Point col="0" x="82.362001333" y="-70.5722759" z="1.73606742e-06" id="10851" />
+            <Point col="0" x="68.362001333" y="-70.5722759" z="1.73606742e-06" id="10852" />
+        </Line>
+        <Line col="0" id="464">
+            <Point col="0" x="68.362001333" y="-70.5722759" z="1.73606742e-06" id="10855" />
+            <Point col="0" x="68.362001333" y="-56.5722759" z="1.73606742e-06" id="10856" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="27">
+        <Line col="0" id="465">
+            <Point col="0" x="130.391001333" y="-56.5722759" z="1.73606742e-06" id="10899" />
+            <Point col="0" x="144.391001333" y="-56.5722759" z="1.73606742e-06" id="10900" />
+        </Line>
+        <Line col="0" id="466">
+            <Point col="0" x="144.391001333" y="-56.5722759" z="1.73606742e-06" id="10903" />
+            <Point col="0" x="144.391001333" y="-70.5722759" z="1.73606742e-06" id="10904" />
+        </Line>
+        <Line col="0" id="467">
+            <Point col="0" x="144.391001333" y="-70.5722759" z="1.73606742e-06" id="10907" />
+            <Point col="0" x="130.391001333" y="-70.5722759" z="1.73606742e-06" id="10908" />
+        </Line>
+        <Line col="0" id="468">
+            <Point col="0" x="130.391001333" y="-70.5722759" z="1.73606742e-06" id="10911" />
+            <Point col="0" x="130.391001333" y="-56.5722759" z="1.73606742e-06" id="10912" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="28">
+        <Line col="0" id="469">
+            <Point col="0" x="192.420001333" y="-56.5722759" z="1.73606742e-06" id="10955" />
+            <Point col="0" x="206.420001333" y="-56.5722759" z="1.73606742e-06" id="10956" />
+        </Line>
+        <Line col="0" id="470">
+            <Point col="0" x="206.420001333" y="-56.5722759" z="1.73606742e-06" id="10959" />
+            <Point col="0" x="206.420001333" y="-70.5722759" z="1.73606742e-06" id="10960" />
+        </Line>
+        <Line col="0" id="471">
+            <Point col="0" x="206.420001333" y="-70.5722759" z="1.73606742e-06" id="10963" />
+            <Point col="0" x="192.420001333" y="-70.5722759" z="1.73606742e-06" id="10964" />
+        </Line>
+        <Line col="0" id="472">
+            <Point col="0" x="192.420001333" y="-70.5722759" z="1.73606742e-06" id="10967" />
+            <Point col="0" x="192.420001333" y="-56.5722759" z="1.73606742e-06" id="10968" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="29">
+        <Line col="0" id="473">
+            <Point col="0" x="220.765001333" y="-56.5722759" z="1.73606742e-06" id="11011" />
+            <Point col="0" x="234.765001333" y="-56.5722759" z="1.73606742e-06" id="11012" />
+        </Line>
+        <Line col="0" id="474">
+            <Point col="0" x="234.765001333" y="-56.5722759" z="1.73606742e-06" id="11015" />
+            <Point col="0" x="234.765001333" y="-70.5722759" z="1.73606742e-06" id="11016" />
+        </Line>
+        <Line col="0" id="475">
+            <Point col="0" x="234.765001333" y="-70.5722759" z="1.73606742e-06" id="11019" />
+            <Point col="0" x="220.765001333" y="-70.5722759" z="1.73606742e-06" id="11020" />
+        </Line>
+        <Line col="0" id="476">
+            <Point col="0" x="220.765001333" y="-70.5722759" z="1.73606742e-06" id="11023" />
+            <Point col="0" x="220.765001333" y="-56.5722759" z="1.73606742e-06" id="11024" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="30">
+        <Line col="0" id="477">
+            <Point col="0" x="244.418001333" y="-56.5722759" z="1.73606742e-06" id="11067" />
+            <Point col="0" x="258.418001333" y="-56.5722759" z="1.73606742e-06" id="11068" />
+        </Line>
+        <Line col="0" id="478">
+            <Point col="0" x="258.418001333" y="-56.5722759" z="1.73606742e-06" id="11071" />
+            <Point col="0" x="258.418001333" y="-70.5722759" z="1.73606742e-06" id="11072" />
+        </Line>
+        <Line col="0" id="479">
+            <Point col="0" x="258.418001333" y="-70.5722759" z="1.73606742e-06" id="11075" />
+            <Point col="0" x="244.418001333" y="-70.5722759" z="1.73606742e-06" id="11076" />
+        </Line>
+        <Line col="0" id="480">
+            <Point col="0" x="244.418001333" y="-70.5722759" z="1.73606742e-06" id="11079" />
+            <Point col="0" x="244.418001333" y="-56.5722759" z="1.73606742e-06" id="11080" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="31">
+        <Line col="0" id="481">
+            <Point col="0" x="268.072001333" y="-56.5722759" z="1.73606742e-06" id="11123" />
+            <Point col="0" x="282.072001333" y="-56.5722759" z="1.73606742e-06" id="11124" />
+        </Line>
+        <Line col="0" id="482">
+            <Point col="0" x="282.072001333" y="-56.5722759" z="1.73606742e-06" id="11127" />
+            <Point col="0" x="282.072001333" y="-70.5722759" z="1.73606742e-06" id="11128" />
+        </Line>
+        <Line col="0" id="483">
+            <Point col="0" x="282.072001333" y="-70.5722759" z="1.73606742e-06" id="11131" />
+            <Point col="0" x="268.072001333" y="-70.5722759" z="1.73606742e-06" id="11132" />
+        </Line>
+        <Line col="0" id="484">
+            <Point col="0" x="268.072001333" y="-70.5722759" z="1.73606742e-06" id="11135" />
+            <Point col="0" x="268.072001333" y="-56.5722759" z="1.73606742e-06" id="11136" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="32">
+        <Line col="0" id="485">
+            <Point col="0" x="301.500001333" y="-56.5722759" z="1.73606742e-06" id="11179" />
+            <Point col="0" x="315.500001333" y="-56.5722759" z="1.73606742e-06" id="11180" />
+        </Line>
+        <Line col="0" id="486">
+            <Point col="0" x="315.500001333" y="-56.5722759" z="1.73606742e-06" id="11183" />
+            <Point col="0" x="315.500001333" y="-70.5722759" z="1.73606742e-06" id="11184" />
+        </Line>
+        <Line col="0" id="487">
+            <Point col="0" x="315.500001333" y="-70.5722759" z="1.73606742e-06" id="11187" />
+            <Point col="0" x="301.500001333" y="-70.5722759" z="1.73606742e-06" id="11188" />
+        </Line>
+        <Line col="0" id="488">
+            <Point col="0" x="301.500001333" y="-70.5722759" z="1.73606742e-06" id="11191" />
+            <Point col="0" x="301.500001333" y="-56.5722759" z="1.73606742e-06" id="11192" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="33">
+        <Line col="0" id="489">
+            <Point col="0" x="320.500001333" y="-56.5722759" z="1.73606742e-06" id="11235" />
+            <Point col="0" x="334.500001333" y="-56.5722759" z="1.73606742e-06" id="11236" />
+        </Line>
+        <Line col="0" id="490">
+            <Point col="0" x="334.500001333" y="-56.5722759" z="1.73606742e-06" id="11239" />
+            <Point col="0" x="334.500001333" y="-70.5722759" z="1.73606742e-06" id="11240" />
+        </Line>
+        <Line col="0" id="491">
+            <Point col="0" x="334.500001333" y="-70.5722759" z="1.73606742e-06" id="11243" />
+            <Point col="0" x="320.500001333" y="-70.5722759" z="1.73606742e-06" id="11244" />
+        </Line>
+        <Line col="0" id="492">
+            <Point col="0" x="320.500001333" y="-70.5722759" z="1.73606742e-06" id="11247" />
+            <Point col="0" x="320.500001333" y="-56.5722759" z="1.73606742e-06" id="11248" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="34">
+        <Line col="0" id="493">
+            <Point col="0" x="45.000001333" y="19.427724125" z="1.73606742e-06" id="11291" />
+            <Point col="0" x="59.000001333" y="19.427724125" z="1.73606742e-06" id="11292" />
+        </Line>
+        <Line col="0" id="494">
+            <Point col="0" x="59.000001333" y="19.427724125" z="1.73606742e-06" id="11295" />
+            <Point col="0" x="59.000001333" y="5.427724125" z="1.73606742e-06" id="11296" />
+        </Line>
+        <Line col="0" id="495">
+            <Point col="0" x="59.000001333" y="5.427724125" z="1.73606742e-06" id="11299" />
+            <Point col="0" x="45.000001333" y="5.427724125" z="1.73606742e-06" id="11300" />
+        </Line>
+        <Line col="0" id="496">
+            <Point col="0" x="45.000001333" y="5.427724125" z="1.73606742e-06" id="11303" />
+            <Point col="0" x="45.000001333" y="19.427724125" z="1.73606742e-06" id="11304" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="35">
+        <Line col="0" id="497">
+            <Point col="0" x="49.700001333" y="-37.5722759" z="1.73606742e-06" id="11347" />
+            <Point col="0" x="63.700001333" y="-37.5722759" z="1.73606742e-06" id="11348" />
+        </Line>
+        <Line col="0" id="498">
+            <Point col="0" x="63.700001333" y="-37.5722759" z="1.73606742e-06" id="11351" />
+            <Point col="0" x="63.700001333" y="-51.5722759" z="1.73606742e-06" id="11352" />
+        </Line>
+        <Line col="0" id="499">
+            <Point col="0" x="63.700001333" y="-51.5722759" z="1.73606742e-06" id="11355" />
+            <Point col="0" x="49.700001333" y="-51.5722759" z="1.73606742e-06" id="11356" />
+        </Line>
+        <Line col="0" id="500">
+            <Point col="0" x="49.700001333" y="-51.5722759" z="1.73606742e-06" id="11359" />
+            <Point col="0" x="49.700001333" y="-37.5722759" z="1.73606742e-06" id="11360" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="36">
+        <Line col="0" id="501">
+            <Point col="0" x="68.700001333" y="-37.5722759" z="1.73606742e-06" id="11403" />
+            <Point col="0" x="82.700001333" y="-37.5722759" z="1.73606742e-06" id="11404" />
+        </Line>
+        <Line col="0" id="502">
+            <Point col="0" x="82.700001333" y="-37.5722759" z="1.73606742e-06" id="11407" />
+            <Point col="0" x="82.700001333" y="-51.5722759" z="1.73606742e-06" id="11408" />
+        </Line>
+        <Line col="0" id="503">
+            <Point col="0" x="82.700001333" y="-51.5722759" z="1.73606742e-06" id="11411" />
+            <Point col="0" x="68.700001333" y="-51.5722759" z="1.73606742e-06" id="11412" />
+        </Line>
+        <Line col="0" id="504">
+            <Point col="0" x="68.700001333" y="-51.5722759" z="1.73606742e-06" id="11415" />
+            <Point col="0" x="68.700001333" y="-37.5722759" z="1.73606742e-06" id="11416" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="37">
+        <Line col="0" id="505">
+            <Point col="0" x="144.703789498" y="-37.5735915" z="1.73606742e-06" id="11459" />
+            <Point col="0" x="158.703789498" y="-37.5735915" z="1.73606742e-06" id="11460" />
+        </Line>
+        <Line col="0" id="506">
+            <Point col="0" x="158.703789498" y="-37.5735915" z="1.73606742e-06" id="11463" />
+            <Point col="0" x="158.703789498" y="-51.5735915" z="1.73606742e-06" id="11464" />
+        </Line>
+        <Line col="0" id="507">
+            <Point col="0" x="158.703789498" y="-51.5735915" z="1.73606742e-06" id="11467" />
+            <Point col="0" x="144.703789498" y="-51.5735915" z="1.73606742e-06" id="11468" />
+        </Line>
+        <Line col="0" id="508">
+            <Point col="0" x="144.703789498" y="-51.5735915" z="1.73606742e-06" id="11471" />
+            <Point col="0" x="144.703789498" y="-37.5735915" z="1.73606742e-06" id="11472" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="38">
+        <Line col="0" id="509">
+            <Point col="0" x="163.700001333" y="-37.5722759" z="1.73606742e-06" id="11515" />
+            <Point col="0" x="177.700001333" y="-37.5722759" z="1.73606742e-06" id="11516" />
+        </Line>
+        <Line col="0" id="510">
+            <Point col="0" x="177.700001333" y="-37.5722759" z="1.73606742e-06" id="11519" />
+            <Point col="0" x="177.700001333" y="-51.5722759" z="1.73606742e-06" id="11520" />
+        </Line>
+        <Line col="0" id="511">
+            <Point col="0" x="177.700001333" y="-51.5722759" z="1.73606742e-06" id="11523" />
+            <Point col="0" x="163.700001333" y="-51.5722759" z="1.73606742e-06" id="11524" />
+        </Line>
+        <Line col="0" id="512">
+            <Point col="0" x="163.700001333" y="-51.5722759" z="1.73606742e-06" id="11527" />
+            <Point col="0" x="163.700001333" y="-37.5722759" z="1.73606742e-06" id="11528" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="39">
+        <Line col="0" id="513">
+            <Point col="0" x="182.700001333" y="-37.5722759" z="1.73606742e-06" id="11571" />
+            <Point col="0" x="196.700001333" y="-37.5722759" z="1.73606742e-06" id="11572" />
+        </Line>
+        <Line col="0" id="514">
+            <Point col="0" x="196.700001333" y="-37.5722759" z="1.73606742e-06" id="11575" />
+            <Point col="0" x="196.700001333" y="-51.5722759" z="1.73606742e-06" id="11576" />
+        </Line>
+        <Line col="0" id="515">
+            <Point col="0" x="196.700001333" y="-51.5722759" z="1.73606742e-06" id="11579" />
+            <Point col="0" x="182.700001333" y="-51.5722759" z="1.73606742e-06" id="11580" />
+        </Line>
+        <Line col="0" id="516">
+            <Point col="0" x="182.700001333" y="-51.5722759" z="1.73606742e-06" id="11583" />
+            <Point col="0" x="182.700001333" y="-37.5722759" z="1.73606742e-06" id="11584" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="40">
+        <Line col="0" id="517">
+            <Point col="0" x="201.700001333" y="-37.5722759" z="1.73606742e-06" id="11627" />
+            <Point col="0" x="215.700001333" y="-37.5722759" z="1.73606742e-06" id="11628" />
+        </Line>
+        <Line col="0" id="518">
+            <Point col="0" x="215.700001333" y="-37.5722759" z="1.73606742e-06" id="11631" />
+            <Point col="0" x="215.700001333" y="-51.5722759" z="1.73606742e-06" id="11632" />
+        </Line>
+        <Line col="0" id="519">
+            <Point col="0" x="215.700001333" y="-51.5722759" z="1.73606742e-06" id="11635" />
+            <Point col="0" x="201.700001333" y="-51.5722759" z="1.73606742e-06" id="11636" />
+        </Line>
+        <Line col="0" id="520">
+            <Point col="0" x="201.700001333" y="-51.5722759" z="1.73606742e-06" id="11639" />
+            <Point col="0" x="201.700001333" y="-37.5722759" z="1.73606742e-06" id="11640" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="41">
+        <Line col="0" id="521">
+            <Point col="0" x="220.700001333" y="-37.5722759" z="1.73606742e-06" id="11683" />
+            <Point col="0" x="234.700001333" y="-37.5722759" z="1.73606742e-06" id="11684" />
+        </Line>
+        <Line col="0" id="522">
+            <Point col="0" x="234.700001333" y="-37.5722759" z="1.73606742e-06" id="11687" />
+            <Point col="0" x="234.700001333" y="-51.5722759" z="1.73606742e-06" id="11688" />
+        </Line>
+        <Line col="0" id="523">
+            <Point col="0" x="234.700001333" y="-51.5722759" z="1.73606742e-06" id="11691" />
+            <Point col="0" x="220.700001333" y="-51.5722759" z="1.73606742e-06" id="11692" />
+        </Line>
+        <Line col="0" id="524">
+            <Point col="0" x="220.700001333" y="-51.5722759" z="1.73606742e-06" id="11695" />
+            <Point col="0" x="220.700001333" y="-37.5722759" z="1.73606742e-06" id="11696" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="42">
+        <Line col="0" id="525">
+            <Point col="0" x="256.300001333" y="-37.5722759" z="1.73606742e-06" id="11739" />
+            <Point col="0" x="270.300001333" y="-37.5722759" z="1.73606742e-06" id="11740" />
+        </Line>
+        <Line col="0" id="526">
+            <Point col="0" x="270.300001333" y="-37.5722759" z="1.73606742e-06" id="11743" />
+            <Point col="0" x="270.300001333" y="-51.5722759" z="1.73606742e-06" id="11744" />
+        </Line>
+        <Line col="0" id="527">
+            <Point col="0" x="270.300001333" y="-51.5722759" z="1.73606742e-06" id="11747" />
+            <Point col="0" x="256.300001333" y="-51.5722759" z="1.73606742e-06" id="11748" />
+        </Line>
+        <Line col="0" id="528">
+            <Point col="0" x="256.300001333" y="-51.5722759" z="1.73606742e-06" id="11751" />
+            <Point col="0" x="256.300001333" y="-37.5722759" z="1.73606742e-06" id="11752" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="43">
+        <Line col="0" id="529">
+            <Point col="0" x="320.500001333" y="-37.5722759" z="1.73606742e-06" id="11795" />
+            <Point col="0" x="334.500001333" y="-37.5722759" z="1.73606742e-06" id="11796" />
+        </Line>
+        <Line col="0" id="530">
+            <Point col="0" x="334.500001333" y="-37.5722759" z="1.73606742e-06" id="11799" />
+            <Point col="0" x="334.500001333" y="-51.5722759" z="1.73606742e-06" id="11800" />
+        </Line>
+        <Line col="0" id="531">
+            <Point col="0" x="334.500001333" y="-51.5722759" z="1.73606742e-06" id="11803" />
+            <Point col="0" x="320.500001333" y="-51.5722759" z="1.73606742e-06" id="11804" />
+        </Line>
+        <Line col="0" id="532">
+            <Point col="0" x="320.500001333" y="-51.5722759" z="1.73606742e-06" id="11807" />
+            <Point col="0" x="320.500001333" y="-37.5722759" z="1.73606742e-06" id="11808" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="44">
+        <Line col="0" id="533">
+            <Point col="0" x="339.500001333" y="-56.5722759" z="1.73606742e-06" id="11851" />
+            <Point col="0" x="353.500001333" y="-56.5722759" z="1.73606742e-06" id="11852" />
+        </Line>
+        <Line col="0" id="534">
+            <Point col="0" x="353.500001333" y="-56.5722759" z="1.73606742e-06" id="11855" />
+            <Point col="0" x="353.500001333" y="-70.5722759" z="1.73606742e-06" id="11856" />
+        </Line>
+        <Line col="0" id="535">
+            <Point col="0" x="353.500001333" y="-70.5722759" z="1.73606742e-06" id="11859" />
+            <Point col="0" x="339.500001333" y="-70.5722759" z="1.73606742e-06" id="11860" />
+        </Line>
+        <Line col="0" id="536">
+            <Point col="0" x="339.500001333" y="-70.5722759" z="1.73606742e-06" id="11863" />
+            <Point col="0" x="339.500001333" y="-56.5722759" z="1.73606742e-06" id="11864" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="45">
+        <Line col="0" id="537">
+            <Point col="0" x="216.000001333" y="19.427724125" z="1.73606742e-06" id="11907" />
+            <Point col="0" x="230.000001333" y="19.427724125" z="1.73606742e-06" id="11908" />
+        </Line>
+        <Line col="0" id="538">
+            <Point col="0" x="230.000001333" y="19.427724125" z="1.73606742e-06" id="11911" />
+            <Point col="0" x="230.000001333" y="5.427724125" z="1.73606742e-06" id="11912" />
+        </Line>
+        <Line col="0" id="539">
+            <Point col="0" x="230.000001333" y="5.427724125" z="1.73606742e-06" id="11915" />
+            <Point col="0" x="216.000001333" y="5.427724125" z="1.73606742e-06" id="11916" />
+        </Line>
+        <Line col="0" id="540">
+            <Point col="0" x="216.000001333" y="5.427724125" z="1.73606742e-06" id="11919" />
+            <Point col="0" x="216.000001333" y="19.427724125" z="1.73606742e-06" id="11920" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="46">
+        <Line col="0" id="541">
+            <Point col="0" x="26.000001333" y="19.427724125" z="1.73606742e-06" id="11963" />
+            <Point col="0" x="40.000001333" y="19.427724125" z="1.73606742e-06" id="11964" />
+        </Line>
+        <Line col="0" id="542">
+            <Point col="0" x="40.000001333" y="19.427724125" z="1.73606742e-06" id="11967" />
+            <Point col="0" x="40.000001333" y="5.427724125" z="1.73606742e-06" id="11968" />
+        </Line>
+        <Line col="0" id="543">
+            <Point col="0" x="40.000001333" y="5.427724125" z="1.73606742e-06" id="11971" />
+            <Point col="0" x="26.000001333" y="5.427724125" z="1.73606742e-06" id="11972" />
+        </Line>
+        <Line col="0" id="544">
+            <Point col="0" x="26.000001333" y="5.427724125" z="1.73606742e-06" id="11975" />
+            <Point col="0" x="26.000001333" y="19.427724125" z="1.73606742e-06" id="11976" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="47">
+        <Line col="0" id="545">
+            <Point col="0" x="263.375001333" y="19.427724125" z="1.73606742e-06" id="12019" />
+            <Point col="0" x="277.375001333" y="19.427724125" z="1.73606742e-06" id="12020" />
+        </Line>
+        <Line col="0" id="546">
+            <Point col="0" x="277.375001333" y="19.427724125" z="1.73606742e-06" id="12023" />
+            <Point col="0" x="277.375001333" y="5.427724125" z="1.73606742e-06" id="12024" />
+        </Line>
+        <Line col="0" id="547">
+            <Point col="0" x="277.375001333" y="5.427724125" z="1.73606742e-06" id="12027" />
+            <Point col="0" x="263.375001333" y="5.427724125" z="1.73606742e-06" id="12028" />
+        </Line>
+        <Line col="0" id="548">
+            <Point col="0" x="263.375001333" y="5.427724125" z="1.73606742e-06" id="12031" />
+            <Point col="0" x="263.375001333" y="19.427724125" z="1.73606742e-06" id="12032" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="48">
+        <Line col="0" id="549">
+            <Point col="0" x="130.500001333" y="47.927724125" z="1.73606742e-06" id="12075" />
+            <Point col="0" x="144.500001333" y="47.927724125" z="1.73606742e-06" id="12076" />
+        </Line>
+        <Line col="0" id="550">
+            <Point col="0" x="144.500001333" y="47.927724125" z="1.73606742e-06" id="12079" />
+            <Point col="0" x="144.500001333" y="33.927724125" z="1.73606742e-06" id="12080" />
+        </Line>
+        <Line col="0" id="551">
+            <Point col="0" x="144.500001333" y="33.927724125" z="1.73606742e-06" id="12083" />
+            <Point col="0" x="130.500001333" y="33.927724125" z="1.73606742e-06" id="12084" />
+        </Line>
+        <Line col="0" id="552">
+            <Point col="0" x="130.500001333" y="33.927724125" z="1.73606742e-06" id="12087" />
+            <Point col="0" x="130.500001333" y="47.927724125" z="1.73606742e-06" id="12088" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="49">
+        <Line col="0" id="553">
+            <Point col="0" x="149.500001333" y="47.927724125" z="1.73606742e-06" id="12131" />
+            <Point col="0" x="163.500001333" y="47.927724125" z="1.73606742e-06" id="12132" />
+        </Line>
+        <Line col="0" id="554">
+            <Point col="0" x="163.500001333" y="47.927724125" z="1.73606742e-06" id="12135" />
+            <Point col="0" x="163.500001333" y="33.927724125" z="1.73606742e-06" id="12136" />
+        </Line>
+        <Line col="0" id="555">
+            <Point col="0" x="163.500001333" y="33.927724125" z="1.73606742e-06" id="12139" />
+            <Point col="0" x="149.500001333" y="33.927724125" z="1.73606742e-06" id="12140" />
+        </Line>
+        <Line col="0" id="556">
+            <Point col="0" x="149.500001333" y="33.927724125" z="1.73606742e-06" id="12143" />
+            <Point col="0" x="149.500001333" y="47.927724125" z="1.73606742e-06" id="12144" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="50">
+        <Line col="0" id="557">
+            <Point col="0" x="168.500001333" y="47.927724125" z="1.73606742e-06" id="12187" />
+            <Point col="0" x="182.500001333" y="47.927724125" z="1.73606742e-06" id="12188" />
+        </Line>
+        <Line col="0" id="558">
+            <Point col="0" x="182.500001333" y="47.927724125" z="1.73606742e-06" id="12191" />
+            <Point col="0" x="182.500001333" y="33.927724125" z="1.73606742e-06" id="12192" />
+        </Line>
+        <Line col="0" id="559">
+            <Point col="0" x="182.500001333" y="33.927724125" z="1.73606742e-06" id="12195" />
+            <Point col="0" x="168.500001333" y="33.927724125" z="1.73606742e-06" id="12196" />
+        </Line>
+        <Line col="0" id="560">
+            <Point col="0" x="168.500001333" y="33.927724125" z="1.73606742e-06" id="12199" />
+            <Point col="0" x="168.500001333" y="47.927724125" z="1.73606742e-06" id="12200" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="51">
+        <Line col="0" id="561">
+            <Point col="0" x="187.500001333" y="47.927724125" z="1.73606742e-06" id="12243" />
+            <Point col="0" x="201.500001333" y="47.927724125" z="1.73606742e-06" id="12244" />
+        </Line>
+        <Line col="0" id="562">
+            <Point col="0" x="201.500001333" y="47.927724125" z="1.73606742e-06" id="12247" />
+            <Point col="0" x="201.500001333" y="33.927724125" z="1.73606742e-06" id="12248" />
+        </Line>
+        <Line col="0" id="563">
+            <Point col="0" x="201.500001333" y="33.927724125" z="1.73606742e-06" id="12251" />
+            <Point col="0" x="187.500001333" y="33.927724125" z="1.73606742e-06" id="12252" />
+        </Line>
+        <Line col="0" id="564">
+            <Point col="0" x="187.500001333" y="33.927724125" z="1.73606742e-06" id="12255" />
+            <Point col="0" x="187.500001333" y="47.927724125" z="1.73606742e-06" id="12256" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="52">
+        <Line col="0" id="565">
+            <Point col="0" x="216.000001333" y="47.927724125" z="1.73606742e-06" id="12299" />
+            <Point col="0" x="230.000001333" y="47.927724125" z="1.73606742e-06" id="12300" />
+        </Line>
+        <Line col="0" id="566">
+            <Point col="0" x="230.000001333" y="47.927724125" z="1.73606742e-06" id="12303" />
+            <Point col="0" x="230.000001333" y="33.927724125" z="1.73606742e-06" id="12304" />
+        </Line>
+        <Line col="0" id="567">
+            <Point col="0" x="230.000001333" y="33.927724125" z="1.73606742e-06" id="12307" />
+            <Point col="0" x="216.000001333" y="33.927724125" z="1.73606742e-06" id="12308" />
+        </Line>
+        <Line col="0" id="568">
+            <Point col="0" x="216.000001333" y="33.927724125" z="1.73606742e-06" id="12311" />
+            <Point col="0" x="216.000001333" y="47.927724125" z="1.73606742e-06" id="12312" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="53">
+        <Line col="0" id="569">
+            <Point col="0" x="235.000001333" y="47.927724125" z="1.73606742e-06" id="12355" />
+            <Point col="0" x="249.000001333" y="47.927724125" z="1.73606742e-06" id="12356" />
+        </Line>
+        <Line col="0" id="570">
+            <Point col="0" x="249.000001333" y="47.927724125" z="1.73606742e-06" id="12359" />
+            <Point col="0" x="249.000001333" y="33.927724125" z="1.73606742e-06" id="12360" />
+        </Line>
+        <Line col="0" id="571">
+            <Point col="0" x="249.000001333" y="33.927724125" z="1.73606742e-06" id="12363" />
+            <Point col="0" x="235.000001333" y="33.927724125" z="1.73606742e-06" id="12364" />
+        </Line>
+        <Line col="0" id="572">
+            <Point col="0" x="235.000001333" y="33.927724125" z="1.73606742e-06" id="12367" />
+            <Point col="0" x="235.000001333" y="47.927724125" z="1.73606742e-06" id="12368" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="54">
+        <Line col="0" id="573">
+            <Point col="0" x="197.000001333" y="19.427724125" z="1.73606742e-06" id="12411" />
+            <Point col="0" x="211.000001333" y="19.427724125" z="1.73606742e-06" id="12412" />
+        </Line>
+        <Line col="0" id="574">
+            <Point col="0" x="211.000001333" y="19.427724125" z="1.73606742e-06" id="12415" />
+            <Point col="0" x="211.000001333" y="5.427724125" z="1.73606742e-06" id="12416" />
+        </Line>
+        <Line col="0" id="575">
+            <Point col="0" x="211.000001333" y="5.427724125" z="1.73606742e-06" id="12419" />
+            <Point col="0" x="197.000001333" y="5.427724125" z="1.73606742e-06" id="12420" />
+        </Line>
+        <Line col="0" id="576">
+            <Point col="0" x="197.000001333" y="5.427724125" z="1.73606742e-06" id="12423" />
+            <Point col="0" x="197.000001333" y="19.427724125" z="1.73606742e-06" id="12424" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="55">
+        <Line col="0" id="577">
+            <Point col="0" x="273.000001333" y="47.927724125" z="1.73606742e-06" id="12467" />
+            <Point col="0" x="287.000001333" y="47.927724125" z="1.73606742e-06" id="12468" />
+        </Line>
+        <Line col="0" id="578">
+            <Point col="0" x="287.000001333" y="47.927724125" z="1.73606742e-06" id="12471" />
+            <Point col="0" x="287.000001333" y="33.927724125" z="1.73606742e-06" id="12472" />
+        </Line>
+        <Line col="0" id="579">
+            <Point col="0" x="287.000001333" y="33.927724125" z="1.73606742e-06" id="12475" />
+            <Point col="0" x="273.000001333" y="33.927724125" z="1.73606742e-06" id="12476" />
+        </Line>
+        <Line col="0" id="580">
+            <Point col="0" x="273.000001333" y="33.927724125" z="1.73606742e-06" id="12479" />
+            <Point col="0" x="273.000001333" y="47.927724125" z="1.73606742e-06" id="12480" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="56">
+        <Line col="0" id="581">
+            <Point col="0" x="301.500001333" y="47.927724125" z="1.73606742e-06" id="12523" />
+            <Point col="0" x="315.500001333" y="47.927724125" z="1.73606742e-06" id="12524" />
+        </Line>
+        <Line col="0" id="582">
+            <Point col="0" x="315.500001333" y="47.927724125" z="1.73606742e-06" id="12527" />
+            <Point col="0" x="315.500001333" y="33.927724125" z="1.73606742e-06" id="12528" />
+        </Line>
+        <Line col="0" id="583">
+            <Point col="0" x="315.500001333" y="33.927724125" z="1.73606742e-06" id="12531" />
+            <Point col="0" x="301.500001333" y="33.927724125" z="1.73606742e-06" id="12532" />
+        </Line>
+        <Line col="0" id="584">
+            <Point col="0" x="301.500001333" y="33.927724125" z="1.73606742e-06" id="12535" />
+            <Point col="0" x="301.500001333" y="47.927724125" z="1.73606742e-06" id="12536" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="57">
+        <Line col="0" id="585">
+            <Point col="0" x="320.500001333" y="47.927724125" z="1.73606742e-06" id="12579" />
+            <Point col="0" x="334.500001333" y="47.927724125" z="1.73606742e-06" id="12580" />
+        </Line>
+        <Line col="0" id="586">
+            <Point col="0" x="334.500001333" y="47.927724125" z="1.73606742e-06" id="12583" />
+            <Point col="0" x="334.500001333" y="33.927724125" z="1.73606742e-06" id="12584" />
+        </Line>
+        <Line col="0" id="587">
+            <Point col="0" x="334.500001333" y="33.927724125" z="1.73606742e-06" id="12587" />
+            <Point col="0" x="320.500001333" y="33.927724125" z="1.73606742e-06" id="12588" />
+        </Line>
+        <Line col="0" id="588">
+            <Point col="0" x="320.500001333" y="33.927724125" z="1.73606742e-06" id="12591" />
+            <Point col="0" x="320.500001333" y="47.927724125" z="1.73606742e-06" id="12592" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="58">
+        <Line col="0" id="589">
+            <Point col="0" x="339.500001333" y="47.927724125" z="1.73606742e-06" id="12635" />
+            <Point col="0" x="353.500001333" y="47.927724125" z="1.73606742e-06" id="12636" />
+        </Line>
+        <Line col="0" id="590">
+            <Point col="0" x="353.500001333" y="47.927724125" z="1.73606742e-06" id="12639" />
+            <Point col="0" x="353.500001333" y="33.927724125" z="1.73606742e-06" id="12640" />
+        </Line>
+        <Line col="0" id="591">
+            <Point col="0" x="353.500001333" y="33.927724125" z="1.73606742e-06" id="12643" />
+            <Point col="0" x="339.500001333" y="33.927724125" z="1.73606742e-06" id="12644" />
+        </Line>
+        <Line col="0" id="592">
+            <Point col="0" x="339.500001333" y="33.927724125" z="1.73606742e-06" id="12647" />
+            <Point col="0" x="339.500001333" y="47.927724125" z="1.73606742e-06" id="12648" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="59">
+        <Line col="0" id="593">
+            <Point col="0" x="301.500001333" y="19.427724125" z="1.73606742e-06" id="12691" />
+            <Point col="0" x="315.500001333" y="19.427724125" z="1.73606742e-06" id="12692" />
+        </Line>
+        <Line col="0" id="594">
+            <Point col="0" x="315.500001333" y="19.427724125" z="1.73606742e-06" id="12695" />
+            <Point col="0" x="315.500001333" y="5.427724125" z="1.73606742e-06" id="12696" />
+        </Line>
+        <Line col="0" id="595">
+            <Point col="0" x="315.500001333" y="5.427724125" z="1.73606742e-06" id="12699" />
+            <Point col="0" x="301.500001333" y="5.427724125" z="1.73606742e-06" id="12700" />
+        </Line>
+        <Line col="0" id="596">
+            <Point col="0" x="301.500001333" y="5.427724125" z="1.73606742e-06" id="12703" />
+            <Point col="0" x="301.500001333" y="19.427724125" z="1.73606742e-06" id="12704" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="60">
+        <Line col="0" id="597">
+            <Point col="0" x="320.500001333" y="19.427724125" z="1.73606742e-06" id="12747" />
+            <Point col="0" x="334.500001333" y="19.427724125" z="1.73606742e-06" id="12748" />
+        </Line>
+        <Line col="0" id="598">
+            <Point col="0" x="334.500001333" y="19.427724125" z="1.73606742e-06" id="12751" />
+            <Point col="0" x="334.500001333" y="5.427724125" z="1.73606742e-06" id="12752" />
+        </Line>
+        <Line col="0" id="599">
+            <Point col="0" x="334.500001333" y="5.427724125" z="1.73606742e-06" id="12755" />
+            <Point col="0" x="320.500001333" y="5.427724125" z="1.73606742e-06" id="12756" />
+        </Line>
+        <Line col="0" id="600">
+            <Point col="0" x="320.500001333" y="5.427724125" z="1.73606742e-06" id="12759" />
+            <Point col="0" x="320.500001333" y="19.427724125" z="1.73606742e-06" id="12760" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="61">
+        <Line col="0" id="601">
+            <Point col="0" x="339.500001333" y="19.427724125" z="1.73606742e-06" id="12803" />
+            <Point col="0" x="353.500001333" y="19.427724125" z="1.73606742e-06" id="12804" />
+        </Line>
+        <Line col="0" id="602">
+            <Point col="0" x="353.500001333" y="19.427724125" z="1.73606742e-06" id="12807" />
+            <Point col="0" x="353.500001333" y="5.427724125" z="1.73606742e-06" id="12808" />
+        </Line>
+        <Line col="0" id="603">
+            <Point col="0" x="353.500001333" y="5.427724125" z="1.73606742e-06" id="12811" />
+            <Point col="0" x="339.500001333" y="5.427724125" z="1.73606742e-06" id="12812" />
+        </Line>
+        <Line col="0" id="604">
+            <Point col="0" x="339.500001333" y="5.427724125" z="1.73606742e-06" id="12815" />
+            <Point col="0" x="339.500001333" y="19.427724125" z="1.73606742e-06" id="12816" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="62">
+        <Line col="0" id="605">
+            <Point col="0" x="301.500001333" y="0.427724125" z="1.73606742e-06" id="12859" />
+            <Point col="0" x="315.500001333" y="0.427724125" z="1.73606742e-06" id="12860" />
+        </Line>
+        <Line col="0" id="606">
+            <Point col="0" x="315.500001333" y="0.427724125" z="1.73606742e-06" id="12863" />
+            <Point col="0" x="315.500001333" y="-13.5722759" z="1.73606742e-06" id="12864" />
+        </Line>
+        <Line col="0" id="607">
+            <Point col="0" x="315.500001333" y="-13.5722759" z="1.73606742e-06" id="12867" />
+            <Point col="0" x="301.500001333" y="-13.5722759" z="1.73606742e-06" id="12868" />
+        </Line>
+        <Line col="0" id="608">
+            <Point col="0" x="301.500001333" y="-13.5722759" z="1.73606742e-06" id="12871" />
+            <Point col="0" x="301.500001333" y="0.427724125" z="1.73606742e-06" id="12872" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="63">
+        <Line col="0" id="609">
+            <Point col="0" x="320.500001333" y="0.427724125" z="1.73606742e-06" id="12915" />
+            <Point col="0" x="334.500001333" y="0.427724125" z="1.73606742e-06" id="12916" />
+        </Line>
+        <Line col="0" id="610">
+            <Point col="0" x="334.500001333" y="0.427724125" z="1.73606742e-06" id="12919" />
+            <Point col="0" x="334.500001333" y="-13.5722759" z="1.73606742e-06" id="12920" />
+        </Line>
+        <Line col="0" id="611">
+            <Point col="0" x="334.500001333" y="-13.5722759" z="1.73606742e-06" id="12923" />
+            <Point col="0" x="320.500001333" y="-13.5722759" z="1.73606742e-06" id="12924" />
+        </Line>
+        <Line col="0" id="612">
+            <Point col="0" x="320.500001333" y="-13.5722759" z="1.73606742e-06" id="12927" />
+            <Point col="0" x="320.500001333" y="0.427724125" z="1.73606742e-06" id="12928" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="64">
+        <Line col="0" id="613">
+            <Point col="0" x="339.500001333" y="0.427724125" z="1.73606742e-06" id="12971" />
+            <Point col="0" x="353.500001333" y="0.427724125" z="1.73606742e-06" id="12972" />
+        </Line>
+        <Line col="0" id="614">
+            <Point col="0" x="353.500001333" y="0.427724125" z="1.73606742e-06" id="12975" />
+            <Point col="0" x="353.500001333" y="-13.5722759" z="1.73606742e-06" id="12976" />
+        </Line>
+        <Line col="0" id="615">
+            <Point col="0" x="353.500001333" y="-13.5722759" z="1.73606742e-06" id="12979" />
+            <Point col="0" x="339.500001333" y="-13.5722759" z="1.73606742e-06" id="12980" />
+        </Line>
+        <Line col="0" id="616">
+            <Point col="0" x="339.500001333" y="-13.5722759" z="1.73606742e-06" id="12983" />
+            <Point col="0" x="339.500001333" y="0.427724125" z="1.73606742e-06" id="12984" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="65">
+        <Line col="0" id="617">
+            <Point col="0" x="254.000001333" y="47.927724125" z="1.73606742e-06" id="13027" />
+            <Point col="0" x="268.000001333" y="47.927724125" z="1.73606742e-06" id="13028" />
+        </Line>
+        <Line col="0" id="618">
+            <Point col="0" x="268.000001333" y="47.927724125" z="1.73606742e-06" id="13031" />
+            <Point col="0" x="268.000001333" y="33.927724125" z="1.73606742e-06" id="13032" />
+        </Line>
+        <Line col="0" id="619">
+            <Point col="0" x="268.000001333" y="33.927724125" z="1.73606742e-06" id="13035" />
+            <Point col="0" x="254.000001333" y="33.927724125" z="1.73606742e-06" id="13036" />
+        </Line>
+        <Line col="0" id="620">
+            <Point col="0" x="254.000001333" y="33.927724125" z="1.73606742e-06" id="13039" />
+            <Point col="0" x="254.000001333" y="47.927724125" z="1.73606742e-06" id="13040" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="66">
+        <Line col="0" id="621">
+            <Point col="0" x="64.000001333" y="47.927724125" z="1.73606742e-06" id="13083" />
+            <Point col="0" x="78.000001333" y="47.927724125" z="1.73606742e-06" id="13084" />
+        </Line>
+        <Line col="0" id="622">
+            <Point col="0" x="78.000001333" y="47.927724125" z="1.73606742e-06" id="13087" />
+            <Point col="0" x="78.000001333" y="33.927724125" z="1.73606742e-06" id="13088" />
+        </Line>
+        <Line col="0" id="623">
+            <Point col="0" x="78.000001333" y="33.927724125" z="1.73606742e-06" id="13091" />
+            <Point col="0" x="64.000001333" y="33.927724125" z="1.73606742e-06" id="13092" />
+        </Line>
+        <Line col="0" id="624">
+            <Point col="0" x="64.000001333" y="33.927724125" z="1.73606742e-06" id="13095" />
+            <Point col="0" x="64.000001333" y="47.927724125" z="1.73606742e-06" id="13096" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="67">
+        <Line col="0" id="625">
+            <Point col="0" x="73.250001333" y="0.427724125" z="1.73606742e-06" id="13139" />
+            <Point col="0" x="87.250001333" y="0.427724125" z="1.73606742e-06" id="13140" />
+        </Line>
+        <Line col="0" id="626">
+            <Point col="0" x="87.250001333" y="0.427724125" z="1.73606742e-06" id="13143" />
+            <Point col="0" x="87.250001333" y="-13.5722759" z="1.73606742e-06" id="13144" />
+        </Line>
+        <Line col="0" id="627">
+            <Point col="0" x="87.250001333" y="-13.5722759" z="1.73606742e-06" id="13147" />
+            <Point col="0" x="73.250001333" y="-13.5722759" z="1.73606742e-06" id="13148" />
+        </Line>
+        <Line col="0" id="628">
+            <Point col="0" x="73.250001333" y="-13.5722759" z="1.73606742e-06" id="13151" />
+            <Point col="0" x="73.250001333" y="0.427724125" z="1.73606742e-06" id="13152" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="68">
+        <Line col="0" id="629">
+            <Point col="0" x="64.000001333" y="19.427724125" z="1.73606742e-06" id="13195" />
+            <Point col="0" x="78.000001333" y="19.427724125" z="1.73606742e-06" id="13196" />
+        </Line>
+        <Line col="0" id="630">
+            <Point col="0" x="78.000001333" y="19.427724125" z="1.73606742e-06" id="13199" />
+            <Point col="0" x="78.000001333" y="5.427724125" z="1.73606742e-06" id="13200" />
+        </Line>
+        <Line col="0" id="631">
+            <Point col="0" x="78.000001333" y="5.427724125" z="1.73606742e-06" id="13203" />
+            <Point col="0" x="64.000001333" y="5.427724125" z="1.73606742e-06" id="13204" />
+        </Line>
+        <Line col="0" id="632">
+            <Point col="0" x="64.000001333" y="5.427724125" z="1.73606742e-06" id="13207" />
+            <Point col="0" x="64.000001333" y="19.427724125" z="1.73606742e-06" id="13208" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="69">
+        <Line col="0" id="633">
+            <Point col="0" x="83.000001333" y="47.927724125" z="1.73606742e-06" id="13251" />
+            <Point col="0" x="97.000001333" y="47.927724125" z="1.73606742e-06" id="13252" />
+        </Line>
+        <Line col="0" id="634">
+            <Point col="0" x="97.000001333" y="47.927724125" z="1.73606742e-06" id="13255" />
+            <Point col="0" x="97.000001333" y="33.927724125" z="1.73606742e-06" id="13256" />
+        </Line>
+        <Line col="0" id="635">
+            <Point col="0" x="97.000001333" y="33.927724125" z="1.73606742e-06" id="13259" />
+            <Point col="0" x="83.000001333" y="33.927724125" z="1.73606742e-06" id="13260" />
+        </Line>
+        <Line col="0" id="636">
+            <Point col="0" x="83.000001333" y="33.927724125" z="1.73606742e-06" id="13263" />
+            <Point col="0" x="83.000001333" y="47.927724125" z="1.73606742e-06" id="13264" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="70">
+        <Line col="0" id="637">
+            <Point col="0" x="92.250001333" y="0.427724125" z="1.73606742e-06" id="13307" />
+            <Point col="0" x="106.250001333" y="0.427724125" z="1.73606742e-06" id="13308" />
+        </Line>
+        <Line col="0" id="638">
+            <Point col="0" x="106.250001333" y="0.427724125" z="1.73606742e-06" id="13311" />
+            <Point col="0" x="106.250001333" y="-13.5722759" z="1.73606742e-06" id="13312" />
+        </Line>
+        <Line col="0" id="639">
+            <Point col="0" x="106.250001333" y="-13.5722759" z="1.73606742e-06" id="13315" />
+            <Point col="0" x="92.250001333" y="-13.5722759" z="1.73606742e-06" id="13316" />
+        </Line>
+        <Line col="0" id="640">
+            <Point col="0" x="92.250001333" y="-13.5722759" z="1.73606742e-06" id="13319" />
+            <Point col="0" x="92.250001333" y="0.427724125" z="1.73606742e-06" id="13320" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="71">
+        <Line col="0" id="641">
+            <Point col="0" x="83.000001333" y="19.427724125" z="1.73606742e-06" id="13363" />
+            <Point col="0" x="97.000001333" y="19.427724125" z="1.73606742e-06" id="13364" />
+        </Line>
+        <Line col="0" id="642">
+            <Point col="0" x="97.000001333" y="19.427724125" z="1.73606742e-06" id="13367" />
+            <Point col="0" x="97.000001333" y="5.427724125" z="1.73606742e-06" id="13368" />
+        </Line>
+        <Line col="0" id="643">
+            <Point col="0" x="97.000001333" y="5.427724125" z="1.73606742e-06" id="13371" />
+            <Point col="0" x="83.000001333" y="5.427724125" z="1.73606742e-06" id="13372" />
+        </Line>
+        <Line col="0" id="644">
+            <Point col="0" x="83.000001333" y="5.427724125" z="1.73606742e-06" id="13375" />
+            <Point col="0" x="83.000001333" y="19.427724125" z="1.73606742e-06" id="13376" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="72">
+        <Line col="0" id="645">
+            <Point col="0" x="102.000001333" y="47.927724125" z="1.73606742e-06" id="13419" />
+            <Point col="0" x="116.000001333" y="47.927724125" z="1.73606742e-06" id="13420" />
+        </Line>
+        <Line col="0" id="646">
+            <Point col="0" x="116.000001333" y="47.927724125" z="1.73606742e-06" id="13423" />
+            <Point col="0" x="116.000001333" y="33.927724125" z="1.73606742e-06" id="13424" />
+        </Line>
+        <Line col="0" id="647">
+            <Point col="0" x="116.000001333" y="33.927724125" z="1.73606742e-06" id="13427" />
+            <Point col="0" x="102.000001333" y="33.927724125" z="1.73606742e-06" id="13428" />
+        </Line>
+        <Line col="0" id="648">
+            <Point col="0" x="102.000001333" y="33.927724125" z="1.73606742e-06" id="13431" />
+            <Point col="0" x="102.000001333" y="47.927724125" z="1.73606742e-06" id="13432" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="73">
+        <Line col="0" id="649">
+            <Point col="0" x="102.000001333" y="19.427724125" z="1.73606742e-06" id="13475" />
+            <Point col="0" x="116.000001333" y="19.427724125" z="1.73606742e-06" id="13476" />
+        </Line>
+        <Line col="0" id="650">
+            <Point col="0" x="116.000001333" y="19.427724125" z="1.73606742e-06" id="13479" />
+            <Point col="0" x="116.000001333" y="5.427724125" z="1.73606742e-06" id="13480" />
+        </Line>
+        <Line col="0" id="651">
+            <Point col="0" x="116.000001333" y="5.427724125" z="1.73606742e-06" id="13483" />
+            <Point col="0" x="102.000001333" y="5.427724125" z="1.73606742e-06" id="13484" />
+        </Line>
+        <Line col="0" id="652">
+            <Point col="0" x="102.000001333" y="5.427724125" z="1.73606742e-06" id="13487" />
+            <Point col="0" x="102.000001333" y="19.427724125" z="1.73606742e-06" id="13488" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="74">
+        <Line col="0" id="653">
+            <Point col="0" x="111.250001333" y="0.427724125" z="1.73606742e-06" id="13531" />
+            <Point col="0" x="125.250001333" y="0.427724125" z="1.73606742e-06" id="13532" />
+        </Line>
+        <Line col="0" id="654">
+            <Point col="0" x="125.250001333" y="0.427724125" z="1.73606742e-06" id="13535" />
+            <Point col="0" x="125.250001333" y="-13.5722759" z="1.73606742e-06" id="13536" />
+        </Line>
+        <Line col="0" id="655">
+            <Point col="0" x="125.250001333" y="-13.5722759" z="1.73606742e-06" id="13539" />
+            <Point col="0" x="111.250001333" y="-13.5722759" z="1.73606742e-06" id="13540" />
+        </Line>
+        <Line col="0" id="656">
+            <Point col="0" x="111.250001333" y="-13.5722759" z="1.73606742e-06" id="13543" />
+            <Point col="0" x="111.250001333" y="0.427724125" z="1.73606742e-06" id="13544" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="75">
+        <Line col="0" id="657">
+            <Point col="0" x="130.250001333" y="0.427724125" z="1.73606742e-06" id="13587" />
+            <Point col="0" x="144.250001333" y="0.427724125" z="1.73606742e-06" id="13588" />
+        </Line>
+        <Line col="0" id="658">
+            <Point col="0" x="144.250001333" y="0.427724125" z="1.73606742e-06" id="13591" />
+            <Point col="0" x="144.250001333" y="-13.5722759" z="1.73606742e-06" id="13592" />
+        </Line>
+        <Line col="0" id="659">
+            <Point col="0" x="144.250001333" y="-13.5722759" z="1.73606742e-06" id="13595" />
+            <Point col="0" x="130.250001333" y="-13.5722759" z="1.73606742e-06" id="13596" />
+        </Line>
+        <Line col="0" id="660">
+            <Point col="0" x="130.250001333" y="-13.5722759" z="1.73606742e-06" id="13599" />
+            <Point col="0" x="130.250001333" y="0.427724125" z="1.73606742e-06" id="13600" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="76">
+        <Line col="0" id="661">
+            <Point col="0" x="149.250001333" y="0.427724125" z="1.73606742e-06" id="13643" />
+            <Point col="0" x="163.250001333" y="0.427724125" z="1.73606742e-06" id="13644" />
+        </Line>
+        <Line col="0" id="662">
+            <Point col="0" x="163.250001333" y="0.427724125" z="1.73606742e-06" id="13647" />
+            <Point col="0" x="163.250001333" y="-13.5722759" z="1.73606742e-06" id="13648" />
+        </Line>
+        <Line col="0" id="663">
+            <Point col="0" x="163.250001333" y="-13.5722759" z="1.73606742e-06" id="13651" />
+            <Point col="0" x="149.250001333" y="-13.5722759" z="1.73606742e-06" id="13652" />
+        </Line>
+        <Line col="0" id="664">
+            <Point col="0" x="149.250001333" y="-13.5722759" z="1.73606742e-06" id="13655" />
+            <Point col="0" x="149.250001333" y="0.427724125" z="1.73606742e-06" id="13656" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="77">
+        <Line col="0" id="665">
+            <Point col="0" x="168.250001333" y="0.427724125" z="1.73606742e-06" id="13699" />
+            <Point col="0" x="182.250001333" y="0.427724125" z="1.73606742e-06" id="13700" />
+        </Line>
+        <Line col="0" id="666">
+            <Point col="0" x="182.250001333" y="0.427724125" z="1.73606742e-06" id="13703" />
+            <Point col="0" x="182.250001333" y="-13.5722759" z="1.73606742e-06" id="13704" />
+        </Line>
+        <Line col="0" id="667">
+            <Point col="0" x="182.250001333" y="-13.5722759" z="1.73606742e-06" id="13707" />
+            <Point col="0" x="168.250001333" y="-13.5722759" z="1.73606742e-06" id="13708" />
+        </Line>
+        <Line col="0" id="668">
+            <Point col="0" x="168.250001333" y="-13.5722759" z="1.73606742e-06" id="13711" />
+            <Point col="0" x="168.250001333" y="0.427724125" z="1.73606742e-06" id="13712" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="78">
+        <Line col="0" id="669">
+            <Point col="0" x="187.250001333" y="0.427724125" z="1.73606742e-06" id="13755" />
+            <Point col="0" x="201.250001333" y="0.427724125" z="1.73606742e-06" id="13756" />
+        </Line>
+        <Line col="0" id="670">
+            <Point col="0" x="201.250001333" y="0.427724125" z="1.73606742e-06" id="13759" />
+            <Point col="0" x="201.250001333" y="-13.5722759" z="1.73606742e-06" id="13760" />
+        </Line>
+        <Line col="0" id="671">
+            <Point col="0" x="201.250001333" y="-13.5722759" z="1.73606742e-06" id="13763" />
+            <Point col="0" x="187.250001333" y="-13.5722759" z="1.73606742e-06" id="13764" />
+        </Line>
+        <Line col="0" id="672">
+            <Point col="0" x="187.250001333" y="-13.5722759" z="1.73606742e-06" id="13767" />
+            <Point col="0" x="187.250001333" y="0.427724125" z="1.73606742e-06" id="13768" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="79">
+        <Line col="0" id="673">
+            <Point col="0" x="206.250001333" y="0.427724125" z="1.73606742e-06" id="13811" />
+            <Point col="0" x="220.250001333" y="0.427724125" z="1.73606742e-06" id="13812" />
+        </Line>
+        <Line col="0" id="674">
+            <Point col="0" x="220.250001333" y="0.427724125" z="1.73606742e-06" id="13815" />
+            <Point col="0" x="220.250001333" y="-13.5722759" z="1.73606742e-06" id="13816" />
+        </Line>
+        <Line col="0" id="675">
+            <Point col="0" x="220.250001333" y="-13.5722759" z="1.73606742e-06" id="13819" />
+            <Point col="0" x="206.250001333" y="-13.5722759" z="1.73606742e-06" id="13820" />
+        </Line>
+        <Line col="0" id="676">
+            <Point col="0" x="206.250001333" y="-13.5722759" z="1.73606742e-06" id="13823" />
+            <Point col="0" x="206.250001333" y="0.427724125" z="1.73606742e-06" id="13824" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="80">
+        <Line col="0" id="677">
+            <Point col="0" x="225.250001333" y="0.427724125" z="1.73606742e-06" id="13867" />
+            <Point col="0" x="239.250001333" y="0.427724125" z="1.73606742e-06" id="13868" />
+        </Line>
+        <Line col="0" id="678">
+            <Point col="0" x="239.250001333" y="0.427724125" z="1.73606742e-06" id="13871" />
+            <Point col="0" x="239.250001333" y="-13.5722759" z="1.73606742e-06" id="13872" />
+        </Line>
+        <Line col="0" id="679">
+            <Point col="0" x="239.250001333" y="-13.5722759" z="1.73606742e-06" id="13875" />
+            <Point col="0" x="225.250001333" y="-13.5722759" z="1.73606742e-06" id="13876" />
+        </Line>
+        <Line col="0" id="680">
+            <Point col="0" x="225.250001333" y="-13.5722759" z="1.73606742e-06" id="13879" />
+            <Point col="0" x="225.250001333" y="0.427724125" z="1.73606742e-06" id="13880" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="81">
+        <Line col="0" id="681">
+            <Point col="0" x="244.250001333" y="0.427724125" z="1.73606742e-06" id="13923" />
+            <Point col="0" x="258.250001333" y="0.427724125" z="1.73606742e-06" id="13924" />
+        </Line>
+        <Line col="0" id="682">
+            <Point col="0" x="258.250001333" y="0.427724125" z="1.73606742e-06" id="13927" />
+            <Point col="0" x="258.250001333" y="-13.5722759" z="1.73606742e-06" id="13928" />
+        </Line>
+        <Line col="0" id="683">
+            <Point col="0" x="258.250001333" y="-13.5722759" z="1.73606742e-06" id="13931" />
+            <Point col="0" x="244.250001333" y="-13.5722759" z="1.73606742e-06" id="13932" />
+        </Line>
+        <Line col="0" id="684">
+            <Point col="0" x="244.250001333" y="-13.5722759" z="1.73606742e-06" id="13935" />
+            <Point col="0" x="244.250001333" y="0.427724125" z="1.73606742e-06" id="13936" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="82">
+        <Line col="0" id="685">
+            <Point col="0" x="121.000001333" y="19.427724125" z="1.73606742e-06" id="13979" />
+            <Point col="0" x="135.000001333" y="19.427724125" z="1.73606742e-06" id="13980" />
+        </Line>
+        <Line col="0" id="686">
+            <Point col="0" x="135.000001333" y="19.427724125" z="1.73606742e-06" id="13983" />
+            <Point col="0" x="135.000001333" y="5.427724125" z="1.73606742e-06" id="13984" />
+        </Line>
+        <Line col="0" id="687">
+            <Point col="0" x="135.000001333" y="5.427724125" z="1.73606742e-06" id="13987" />
+            <Point col="0" x="121.000001333" y="5.427724125" z="1.73606742e-06" id="13988" />
+        </Line>
+        <Line col="0" id="688">
+            <Point col="0" x="121.000001333" y="5.427724125" z="1.73606742e-06" id="13991" />
+            <Point col="0" x="121.000001333" y="19.427724125" z="1.73606742e-06" id="13992" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="83">
+        <Line col="0" id="689">
+            <Point col="0" x="140.000001333" y="19.427724125" z="1.73606742e-06" id="14035" />
+            <Point col="0" x="154.000001333" y="19.427724125" z="1.73606742e-06" id="14036" />
+        </Line>
+        <Line col="0" id="690">
+            <Point col="0" x="154.000001333" y="19.427724125" z="1.73606742e-06" id="14039" />
+            <Point col="0" x="154.000001333" y="5.427724125" z="1.73606742e-06" id="14040" />
+        </Line>
+        <Line col="0" id="691">
+            <Point col="0" x="154.000001333" y="5.427724125" z="1.73606742e-06" id="14043" />
+            <Point col="0" x="140.000001333" y="5.427724125" z="1.73606742e-06" id="14044" />
+        </Line>
+        <Line col="0" id="692">
+            <Point col="0" x="140.000001333" y="5.427724125" z="1.73606742e-06" id="14047" />
+            <Point col="0" x="140.000001333" y="19.427724125" z="1.73606742e-06" id="14048" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="84">
+        <Line col="0" id="693">
+            <Point col="0" x="159.000001333" y="19.427724125" z="1.73606742e-06" id="14091" />
+            <Point col="0" x="173.000001333" y="19.427724125" z="1.73606742e-06" id="14092" />
+        </Line>
+        <Line col="0" id="694">
+            <Point col="0" x="173.000001333" y="19.427724125" z="1.73606742e-06" id="14095" />
+            <Point col="0" x="173.000001333" y="5.427724125" z="1.73606742e-06" id="14096" />
+        </Line>
+        <Line col="0" id="695">
+            <Point col="0" x="173.000001333" y="5.427724125" z="1.73606742e-06" id="14099" />
+            <Point col="0" x="159.000001333" y="5.427724125" z="1.73606742e-06" id="14100" />
+        </Line>
+        <Line col="0" id="696">
+            <Point col="0" x="159.000001333" y="5.427724125" z="1.73606742e-06" id="14103" />
+            <Point col="0" x="159.000001333" y="19.427724125" z="1.73606742e-06" id="14104" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="85">
+        <Line col="0" id="697">
+            <Point col="0" x="235.000001333" y="19.427724125" z="1.73606742e-06" id="14147" />
+            <Point col="0" x="249.000001333" y="19.427724125" z="1.73606742e-06" id="14148" />
+        </Line>
+        <Line col="0" id="698">
+            <Point col="0" x="249.000001333" y="19.427724125" z="1.73606742e-06" id="14151" />
+            <Point col="0" x="249.000001333" y="5.427724125" z="1.73606742e-06" id="14152" />
+        </Line>
+        <Line col="0" id="699">
+            <Point col="0" x="249.000001333" y="5.427724125" z="1.73606742e-06" id="14155" />
+            <Point col="0" x="235.000001333" y="5.427724125" z="1.73606742e-06" id="14156" />
+        </Line>
+        <Line col="0" id="700">
+            <Point col="0" x="235.000001333" y="5.427724125" z="1.73606742e-06" id="14159" />
+            <Point col="0" x="235.000001333" y="19.427724125" z="1.73606742e-06" id="14160" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="86">
+        <Line col="0" id="701">
+            <Point col="0" x="178.000001333" y="19.427724125" z="1.73606742e-06" id="14203" />
+            <Point col="0" x="192.000001333" y="19.427724125" z="1.73606742e-06" id="14204" />
+        </Line>
+        <Line col="0" id="702">
+            <Point col="0" x="192.000001333" y="19.427724125" z="1.73606742e-06" id="14207" />
+            <Point col="0" x="192.000001333" y="5.427724125" z="1.73606742e-06" id="14208" />
+        </Line>
+        <Line col="0" id="703">
+            <Point col="0" x="192.000001333" y="5.427724125" z="1.73606742e-06" id="14211" />
+            <Point col="0" x="178.000001333" y="5.427724125" z="1.73606742e-06" id="14212" />
+        </Line>
+        <Line col="0" id="704">
+            <Point col="0" x="178.000001333" y="5.427724125" z="1.73606742e-06" id="14215" />
+            <Point col="0" x="178.000001333" y="19.427724125" z="1.73606742e-06" id="14216" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="87">
+        <Line col="0" id="705">
+            <Point col="0" x="106.700001333" y="-37.5784799" z="1.73606742e-06" id="14259" />
+            <Point col="0" x="120.700001333" y="-37.5784799" z="1.73606742e-06" id="14260" />
+        </Line>
+        <Line col="0" id="706">
+            <Point col="0" x="120.700001333" y="-37.5784799" z="1.73606742e-06" id="14263" />
+            <Point col="0" x="120.700001333" y="-51.5784799" z="1.73606742e-06" id="14264" />
+        </Line>
+        <Line col="0" id="707">
+            <Point col="0" x="120.700001333" y="-51.5784799" z="1.73606742e-06" id="14267" />
+            <Point col="0" x="106.700001333" y="-51.5784799" z="1.73606742e-06" id="14268" />
+        </Line>
+        <Line col="0" id="708">
+            <Point col="0" x="106.700001333" y="-51.5784799" z="1.73606742e-06" id="14271" />
+            <Point col="0" x="106.700001333" y="-37.5784799" z="1.73606742e-06" id="14272" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="88">
+        <Line col="0" id="709">
+            <Point col="0" x="59.100001333" y="-18.5722759" z="1.73606742e-06" id="14315" />
+            <Point col="0" x="73.100001333" y="-18.5722759" z="1.73606742e-06" id="14316" />
+        </Line>
+        <Line col="0" id="710">
+            <Point col="0" x="73.100001333" y="-18.5722759" z="1.73606742e-06" id="14319" />
+            <Point col="0" x="73.100001333" y="-32.5722759" z="1.73606742e-06" id="14320" />
+        </Line>
+        <Line col="0" id="711">
+            <Point col="0" x="73.100001333" y="-32.5722759" z="1.73606742e-06" id="14323" />
+            <Point col="0" x="59.100001333" y="-32.5722759" z="1.73606742e-06" id="14324" />
+        </Line>
+        <Line col="0" id="712">
+            <Point col="0" x="59.100001333" y="-32.5722759" z="1.73606742e-06" id="14327" />
+            <Point col="0" x="59.100001333" y="-18.5722759" z="1.73606742e-06" id="14328" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="89">
+        <Line col="0" id="713">
+            <Point col="0" x="125.700001333" y="-37.5722759" z="1.73606742e-06" id="14371" />
+            <Point col="0" x="139.700001333" y="-37.5722759" z="1.73606742e-06" id="14372" />
+        </Line>
+        <Line col="0" id="714">
+            <Point col="0" x="139.700001333" y="-37.5722759" z="1.73606742e-06" id="14375" />
+            <Point col="0" x="139.700001333" y="-51.5722759" z="1.73606742e-06" id="14376" />
+        </Line>
+        <Line col="0" id="715">
+            <Point col="0" x="139.700001333" y="-51.5722759" z="1.73606742e-06" id="14379" />
+            <Point col="0" x="125.700001333" y="-51.5722759" z="1.73606742e-06" id="14380" />
+        </Line>
+        <Line col="0" id="716">
+            <Point col="0" x="125.700001333" y="-51.5722759" z="1.73606742e-06" id="14383" />
+            <Point col="0" x="125.700001333" y="-37.5722759" z="1.73606742e-06" id="14384" />
+        </Line>
+    </Sketch>
+    <Sketch title="Sketch" id="90">
+        <Line col="0" id="717">
+            <Point col="0" x="9.350001333" y="-37.5705336" z="1.73606742e-06" id="14427" />
+            <Point col="0" x="23.036060377" y="-37.5705336" z="1.73606742e-06" id="14428" />
+        </Line>
+        <Line col="0" id="718">
+            <Point col="0" x="23.036060377" y="-37.5705336" z="1.73606742e-06" id="14431" />
+            <Point col="0" x="23.036060377" y="-51.5722759" z="1.73606742e-06" id="14432" />
+        </Line>
+        <Line col="0" id="719">
+            <Point col="0" x="23.036060377" y="-51.5722759" z="1.73606742e-06" id="14435" />
+            <Point col="0" x="9.350001333" y="-51.5722759" z="1.73606742e-06" id="14436" />
+        </Line>
+        <Line col="0" id="720">
+            <Point col="0" x="9.350001333" y="-51.5722759" z="1.73606742e-06" id="14439" />
+            <Point col="0" x="9.350001333" y="-37.5705336" z="1.73606742e-06" id="14440" />
+        </Line>
+    </Sketch>
+</HeeksCAD_Document>

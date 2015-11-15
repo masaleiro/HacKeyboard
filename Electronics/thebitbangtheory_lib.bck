@@ -1,0 +1,46 @@
+EESchema-DOCLIB  Version 2.0  Date: Qua 11 Jun 2014 01:16:02 WEST
+#
+$CMP 24AA512
+D I2C Serial EEPROM
+K EEPROM Serial
+$ENDCMP
+#
+$CMP 24C512
+D I2C Serial eprom
+K I2C MEMORY
+F memory/24xx512.pdf
+$ENDCMP
+#
+$CMP MCP1253
+D POSITIVE-REGULATED CHARGE PUMP
+K Charge pump
+$ENDCMP
+#
+$CMP MCP73871
+D Li-Ion Charge Controller with Load sharing
+K Li-ion load charger
+$ENDCMP
+#
+$CMP PIC18F4550_TQFP44
+D PIC18F4550_TQFP44
+K microcontroller usb
+$ENDCMP
+#
+$CMP SN74HC595
+D 8 bits serial in // out Shift Register 3 State Out
+K HCMOS SR 3State
+F 74xx/74HC595.pdf
+$ENDCMP
+#
+$CMP TC1017
+D MICROPOWER 150mA Regulator   tiny SOT-23 5-leads package
+K REGUL POWER
+F linear-tec\TC1017.pdf
+$ENDCMP
+#
+$CMP TPS60130
+D Regulated 5V Charge Pump DC-DC converters
+K Charge pump converter
+$ENDCMP
+#
+#End Doc Library
